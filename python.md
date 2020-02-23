@@ -11,3 +11,6 @@ from <parent module> import <module name>
 ```
 
 What is `@classmethod` used for?
+
+
+`zip`, `map`, `filter`, `lambda` function使用
