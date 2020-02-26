@@ -14,3 +14,6 @@ What is `@classmethod` used for?
 
 
 `zip`, `map`, `filter`, `lambda` function使用
+
+### regex
+not something: `!`

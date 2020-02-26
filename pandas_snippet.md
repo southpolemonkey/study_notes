@@ -1,4 +1,4 @@
-## Pandas 
+# Pandas 
 
 ## Accumulative calculation, Moving average etc
 - pd.DataFrame.expanding()
@@ -26,7 +26,17 @@ df = (pd.read_excel('a.csv')
 
 ```
 
-## How to generate a sequence of date?
+
+
+## Mock coalesce
+coalsesc: 
+df['c'] = np.where(df["a"].isnull(), df["b"], df["a"] )
+df['c'] = df.a.combine_first(df.b)
+
+## work with date, time
+how to specify date format when converting str to datetime/date?
+
+### How to generate a sequence of date?
 ```python
 pd.date_range(20200101, period='D', frequency=1)
 ```
