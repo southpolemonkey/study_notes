@@ -25,3 +25,5 @@ def titlecase(s):
 
 titlecase("they're bill's friends.")
 ```
+### regex
+not something: `!`
