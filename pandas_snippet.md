@@ -1,10 +1,27 @@
 # Pandas 
 
+## Metadata check
+
+```python
+# check memory usage
+df.info()
+
+# check memory for each column
+ts.memory_usage(deep=True)
+```
+
+## Optimisation tips
+
+- Convert low cardinality column to `Categorical`
+
+```python
+cpython
+```
+
 ## Accumulative calculation, Moving average etc
 
 - pd.DataFrame.expanding()
 - pd.DataFrame.rolling(min_periods=1)
-
 
 ## Working with missing data
 
@@ -27,8 +44,6 @@ df = (pd.read_excel('a.csv')
         .pipe(pd.to_datetime, ['A', 'B', 'C'])
         .assign(D=lambda x:x['A'] > x['B'],
                 E=lambda x:['C'] + x['D'])
-    
-
 ```
 
 ## Mock coalesce
@@ -64,3 +79,8 @@ df_ysd.groupby(['Entity Group ID']).filter(lambda x: x['Entity Group ID'].size >
 6. (df.label_x == df.label_y).value_counts()
 From <https://stackoverflow.com/questions/26988041/pandas-dataframe-row-wise-comparison> 
 7. Remove Nanhttps://stackoverflow.com/a/45695390/6716236
+```
+
+## Is pandas thread safe
+
+https://stackoverflow.com/a/55382886/6716236
