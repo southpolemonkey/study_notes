@@ -60,3 +60,8 @@ pd.date_range(20200101, period='D', frequency=1)
 ## Is pandas thread safe
 
 https://stackoverflow.com/a/55382886/6716236
+
+
+## Performance Enhancement
+- cython
+- numba

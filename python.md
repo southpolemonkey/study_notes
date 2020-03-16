@@ -1,17 +1,21 @@
-### How does `import` work?
+# Python
 
-### What is `future` module?
+## How does `import` work
+
+Regular package vs Namespaces package 
 
 ### How to import from module from parent package?
+
 ```python
 import os,sys
 
-sys.path.append(os.path.join(os.path.dirname(__file__), os.pardir, 'src'))
+sys.path.append(os.path.join(os.path.dirname(__file__), os.pardir, 'src')
 from <parent module> import <module name>
 ```
 
-What is `@classmethod` used for?
+## What is `future` module
 
+What is `@classmethod` used for?
 
 `zip`, `map`, `filter`, `lambda` function使用
 
@@ -25,5 +29,81 @@ def titlecase(s):
 
 titlecase("they're bill's friends.")
 ```
+
 ### regex
+
 not something: `!`
+
+## Logging
+
+- logger
+- handler
+- filter
+- formatter
+
+## ArgParse
+
+```python
+import argparse
+parser = argparse.ArgumentParser()
+# mandatory arguments
+# dest specify a variable holds the argv
+parser.add_argument("square", dest='square', type=int, help="display a square of a given number")
+# optional arguments
+parser.add_argument("-v", "--verbose", action="store_true", help="increase output verbosity")
+args = parser.parse_args()
+
+square = args.square
+```
+
+## List files in directory
+
+```python
+# use glob
+# list all files
+files = [f for f in glob.glob(path + "**/*.txt", recursive=True)]
+# list all folders
+folders = [f for f in glob.glob(path + "**/", recursive=True)]
+
+# os.walk
+# r=root, d=directories, f = files
+# list all txt files
+for r, d, f in os.walk(path):
+    for file in f:
+        if '.txt' in file:
+            files.append(os.path.join(r, file))
+
+# list file size
+max_file_name = max([len(file) for file in os.listdir()])+5
+
+for file in os.listdir():
+    file_size = os.path.getsize(file)/1024
+    print(f'{file:<{max_file_name}}: {file_size:.2f} KB')
+
+```
+
+## List memory usuage for local variables
+
+```python
+def sizeof_fmt(num, suffix='B'):
+    ''' by Fred Cirera,  https://stackoverflow.com/a/1094933/1870254, modified'''
+    for unit in ['','Ki','Mi','Gi','Ti','Pi','Ei','Zi']:
+        if abs(num) < 1024.0:
+            return "%3.1f %s%s" % (num, unit, suffix)
+        num /= 1024.0
+    return "%.1f %s%s" % (num, 'Yi', suffix)
+
+for name, size in sorted(((name, sys.getsizeof(value)) for name, value in locals().items()),
+                         key= lambda x: -x[1])[:10]:
+    print("{:>30}: {:>8}".format(name, sizeof_fmt(size)))
+```
+
+## List file size in folder
+
+## subprocess
+
+## fstring formatting
+http://zetcode.com/python/fstring/
+
+
+
