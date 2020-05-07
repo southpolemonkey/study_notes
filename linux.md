@@ -142,3 +142,10 @@ find . -name "*.t1" -exec bash -c 'mv "$1" "${1%.t1}".t2' - '{}' \;
 # change filename case
 for f in * ; do mv -- "$f" "$(tr [:lower:] [:upper:] <<< "$f")" ; done
 ```
+### rename multiple files
+
+```bash
+for f in *.prog; do mv -- "$f" "${f%.prog}.prg"
+```
+
+[how-to-use-the-rename-command-on-linux](https://www.howtogeek.com/423214/how-to-use-the-rename-command-on-linux/)

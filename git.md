@@ -1,3 +1,9 @@
+## ssh setup
+Two methods to authorize:
+- ssh
+- https
+
+
 ## How to protect branch?
 Protection includes following scenarios:
 - disallow forced push into certain branches
