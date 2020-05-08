@@ -138,3 +138,8 @@ print("date and time =", dt_string)
 ### web scraper
 
 https://www.geeksforgeeks.org/download-instagram-profile-pic-using-python/
+
+### debug 
+step over
+step in
+step out

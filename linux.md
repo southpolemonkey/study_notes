@@ -24,6 +24,8 @@ grep -ir -C 4 --include=PATTERN "kind: job"
 # find multiple extensions
 find . -type f \( -name "*.json" -o -name "*.sh" \);
 
+# delete file by patterm
+find . -name "*.sql" -type f -delete
 ```
 
 ### grep
@@ -149,3 +151,11 @@ for f in *.prog; do mv -- "$f" "${f%.prog}.prg"
 ```
 
 [how-to-use-the-rename-command-on-linux](https://www.howtogeek.com/423214/how-to-use-the-rename-command-on-linux/)
+
+
+weird symbols in bash
+`<<` here format
+`-z` check if string is empty
+`-f` find file
+
+[Bash Beginner Guide](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/)

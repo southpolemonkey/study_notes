@@ -11,6 +11,7 @@ Protection includes following scenarios:
 
 https://stackoverflow.com/a/38866304/6716236
 
+## source behind proxy
 
 
 ## CI/CD
@@ -21,3 +22,6 @@ https://stackoverflow.com/a/38866304/6716236
 
 ## submodules
 Git submodules enables developer to link a third party repo to the current repo.
+
+## reading
+[implement git yourself](https://wyag.thb.lt/)
