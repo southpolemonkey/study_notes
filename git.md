@@ -25,3 +25,9 @@ Git submodules enables developer to link a third party repo to the current repo.
 
 ## reading
 [implement git yourself](https://wyag.thb.lt/)
+
+## deployment tools
+probot
+buildkites
+Github Action
+Git submodules enables developer to link a third party repo to the current repo.
