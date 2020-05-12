@@ -1,0 +1,32 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    
+    // config file for debug python in vscode
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+        },
+        {
+            "name": "Python: dbt generation non-viewing",
+            "type": "python",
+            "request": "launch",
+            "program": "/Users/ronga/dev/foxtel/jarvis/dbt-stb/dbt_code_gen/dbt_raw_std_gen.py",
+            "args": ["-f","/Users/ronga/dev/foxtel/doc/source_to_target_mapping/Raw to Standardised/AVAYA", "-o", "models_gen", "-e", "INFO"]
+        },
+        {
+            "name":"Python: dbt generation viewing",
+            "type":"python",
+            "request":"launch",
+            "program":"/Users/ronga/dev/foxtel/jarvis/dbt-stb/dbt_code_gen/split_datasets.py",
+            "args": ["-f","/Users/ronga/dev/foxtel/doc/source_to_target_mapping/Raw to Standardised/VIEWING", "-o", "models_gen", "-e", "INFO", "-p", "OTT_GO"],
+            "console":"integratedTerminal"
+        },
+    ]
+}

@@ -5,7 +5,6 @@
 - data types
 - How to write and run test cases?
 
-
 https://gobyexample.com/methods
 
 ## cheatsheet
