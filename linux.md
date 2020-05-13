@@ -159,3 +159,7 @@ weird symbols in bash
 `-f` find file
 
 [Bash Beginner Guide](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/)
+
+### 2>&1 meaning
+
+> >& is the syntax to redirect a stream to another file descriptor - 0 is stdin, 1 is stdout, and 2 is stderr.
