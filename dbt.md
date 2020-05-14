@@ -29,6 +29,8 @@ how dbt construct schema and table name?
 
 ### snapshots
 
+strategy
+
 [dbt package: snowflake cost](https://gitlab.com/gitlab-data/snowflake_spend)
 
 
@@ -56,5 +58,35 @@ add new data resource and fields
 [Meltano](https://meltano.com/)
 [Singer](https://meltano.com/)
 
+
 ### Readling List
 [Why you need a data analyst](https://blog.getdbt.com/the-startup-founder-s-guide-to-analytics/)
+[snowplow web data model](https://github.com/snowplow/snowplow-web-data-model)
+[iglu-snowplow schema registry](https://github.com/snowplow/iglu)
+
+
+## packages
+
+### dbtutils
+
+`get_relations_by_prefix`
+
+```sql
+
+-- Example using the union_relations macro
+{% set event_relations = dbt_utils.get_relations_by_prefix('events', 'event_') %}
+{{ dbt_utils.union_relations(relations = event_relations) }}
+
+```
+
+`star`
+```sql
+select
+{{ dbt_utils.star(from=ref('my_model'), except=["exclude_field_1", "exclude_field_2"]) }}
+from {{ref('my_model')}}
+```
+
+`pivot` and `unpivot`
+
+
+

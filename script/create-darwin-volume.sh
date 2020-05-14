@@ -1,4 +1,6 @@
 #!/bin/sh
+
+# The script will help to create nix folder under root path, which has been restricted from Mac OS Catalina onwards.
 set -e
 
 root_disk() {
