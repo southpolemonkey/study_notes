@@ -9,3 +9,17 @@ http://maven.apache.org/guides/introduction/introduction-to-the-standard-directo
 ## build tool
 
 [bazel](https://bazel.build/)
+
+## Scala type system
+
+object
+trait
+implicit
+type class
+
+## Functino Programming
+
+two basic rules underlies the definition of `Monoid`
+- associative law
+- identity law
+
