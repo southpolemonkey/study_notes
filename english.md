@@ -8,3 +8,11 @@ platoon | platoon commander
 taint | contaminate or pollute
 bar metal server | physical server, opposite to virtual macine
 evict | expel someone from property
+perplex | 
+baffle | 
+monetization | the action of earning revenue from asset
+ammonite | ammonite fossil
+spawn | 
+strikes a chord | 
+intimidating | frightening and scary
+emulate | 
