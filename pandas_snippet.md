@@ -89,3 +89,6 @@ https://stackoverflow.com/a/55382886/6716236
 ## Performance Enhancement
 - cython
 - numba
+
+## shuffle dataframe
+df.sample(frac=1)

@@ -34,6 +34,21 @@ titlecase("they're bill's friends.")
 
 not something: `!`
 
+```python
+
+# extract pattern from string
+m = re.search(pat, text)
+if m:
+    found = m.group(1)
+
+# alternative
+try:
+    found = re.search(pat, text).group(1)
+except AttributeError:
+    # AAA, ZZZ not found in the original string
+    found = '' # apply your error handling
+```
+
 ## Logging
 
 - logger
