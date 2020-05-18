@@ -42,3 +42,14 @@ reduce_group(grps)
 http://www.ccom.ucsd.edu/~cdeotte/programs/neuralnetwork.html
 
 [graph database in Enterprise content management](https://neo4j.com/graphgist/enterprise-content-management-with-neo4j)
+
+## Models
+
+Random Forest
+XGBoost
+lightGBM
+
+## Good notebooks
+
+[titanic dataset](https://www.kaggle.com/gunesevitan/titanic-advanced-feature-engineering-tutorial/notebook)
+

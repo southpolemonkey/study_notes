@@ -158,3 +158,28 @@ https://www.geeksforgeeks.org/download-instagram-profile-pic-using-python/
 step over
 step in
 step out
+
+### argparse
+
+```python
+parser = argparse.ArgumentParser()
+
+parser.add_argument()
+
+args = parser.parser_args()
+```
+what is `positional argument`
+
+action
+- store
+- store_const
+- store_true
+- append
+- append_const
+- count
+- version
+- help
+- extend
+
+
+
