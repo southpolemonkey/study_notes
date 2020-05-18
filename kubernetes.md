@@ -1,12 +1,6 @@
-# kubernetes
+# Kubernetes
 
-## concepts 
-
-workload identify pool
-ksa
-annotate
-
-## Docker
+# 1. Docker Basics
 
 steps
 - create docker image
@@ -26,24 +20,21 @@ gcloud container images delete gcr.io/[PROJECT-ID]/quickstart-image:tag1 --force
 FROM [--platform=<platform>] <image>[:<tag>] [AS <name>]
 
 ```
-gcloud container registry
-> gcloud auth configure-docker
 
-
-## core concepts
+# 2. Core Concepts
 
 **components**
-api server
-etcd
-scheduler
-kubelet
-controller
-container runtime
+- api server
+- etcd
+- scheduler
+- kubelet
+- controller
+- container runtime
 
 
-### workloads
+# 2.1 workloads
 
-#### pod
+## 2.1.1 pod
 
 the smallest unit, can have more than one containers running
 
@@ -60,7 +51,8 @@ kubectl edit pod <pod-name>
 kubectl get replicationcontroller
 ```
 
-#### replicaSet
+## 2.1.2 replicaSet
+
 ```yaml
 ...
 kind: ReplicationController
@@ -77,49 +69,63 @@ spec:
 kind: ReplicaSet
 selector: 
 ```
-how to scale a replicaSet?
-kubectl replace -f .yaml
-kubectl scale --replica=6 -f .yaml
-kubectl config set-context $(kubectl config current-context) --namespace=dev
 
-#### deployment
+```bash
+# how to scale a replicaSet?
+
+kubectl replace -f .yaml
+kubectl scale --replicas=6 -f .yaml
+kubectl config set-context $(kubectl config current-context) --namespace=dev
+```
+
+## 2.1.3 Deployment
 
 ```yaml
 kind: Deployment
-
 ```
 
-#### namespace
+## 2.1.4 namespace
 
-#### Service
+```yaml
+kind: namespaces
+```
+## 2.1.5 Service
 
-### configuration
+```yaml
+kind: service
+```
+
+## 2.2 configuration
 
 `command` ---> ENTRYPOINT 
+
 `args` ---> CMD
 
-configMaps
+## configMaps
 
 SecurityContexts
 
-Secrets
+## Secrets
 
-ServiceAccounts
+## ServiceAccounts
 > gsa ---> ksa ---> kubectl annotate
 
 taint? what's the use case?
 affinity? tolerations? 
 
-### multi-container pods
+## 2.3 multi-container pods
 
 sidecar, use cases: logging services
+
 adapter
+
 ambassador
 
 
-### observability
+## 2.4 observability
 
 readiness probes
+
 basically it detects if the application is ready for receiving traffic
 
 - pending
@@ -137,7 +143,7 @@ kubectl logs -f <pod-name> <container-name>
 ```
 stackdriver monitoring
 
-### pod design
+## 2.5 pod design
 
 labels, selectors, annotation
 
@@ -148,7 +154,9 @@ selector:
 
 ```
 
-rolling updates, rollbacks
+rolling updates
+
+rollbacks
 
 ```bash
 kubectl set image <deployment-name> <image-name>
@@ -157,8 +165,12 @@ kubectl rollout history <deployment-name>
 kubectl rollout undo <deployment-name>
 ```
 
-jobs: one-off run, batch jobs
+jobs: one-off run
+
+batch jobs
+
 restartPolicy: Never/Always
+
 parallelism: 3
 
 ```yaml
@@ -166,20 +178,82 @@ CronJob:
 schedule: "0 0 3 ? * * *"
 ```
 
-### service & networking
+## 2.6 service & networking
 
 services
 
-### state persistence
+ingress
 
+ingress controller
 
-### FAQ
+egress
+
+network traffic
+
+## 2.7 state persistence
+
+persistent volumns
+
+mounts
+
+how k8s store generated data?
+
+volumnStore: mountPath
+
+`PersisentVolume`
+
+`PersistentVolumnClaim`
+
+Optional topics
+- static provisioning
+- dynamic provisioning
+- Stateful sets
+
+# FAQ
 
 how to create a cluster? 
+
 how to create a pod?
+
 what's the best access pattern 
 
-### reading list
+how to use template?
+
+yaml syntax practing
+
+how to switch context?
+
+`DEVOPS15` voucher code for exam registry
+
+what does `READY` column stand for in `get pods` output?
+
+```yaml
+# create pod
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox-sleep
+spec:
+  containers:
+  - name: busybox
+    image: busybox
+
+# change image name in pod
+```
+
+# Reading List
 
 [lucassha-CKAD](https://github.com/lucassha/CKAD-resources)
+
+# Common Errors
+
+ReplicaSet
+>The ReplicaSet "replicaset-2" is invalid: spec.template.metadata.labels: Invalid value: map[string]string{"tier":"nginx"}: `selector` does not match template `labels`
+
+
+Errors occuring during the provising of pods
+- ImagePullBackOff
+- CrashLoopBackOff
+
 

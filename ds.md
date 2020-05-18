@@ -49,3 +49,7 @@ Random Forest
 XGBoost
 lightGBM
 
+## Good notebooks
+
+[titanic dataset](https://www.kaggle.com/gunesevitan/titanic-advanced-feature-engineering-tutorial/notebook)
+

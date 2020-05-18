@@ -18,3 +18,9 @@ Create understandable SLAs for each of the production data pipelines.
 Develop best practices and frameworks for unit, functional and integration tests around data pipelines, and drive the team towards increased overall test coverage.
 Design CI and deployment processes and best practices for the production data pipelines.
 Design schemas for financial, sales and support data in the data warehouse.
+
+# Alternative industry 
+
+[Job Outlook](https://www.joboutlook.gov.au/)
+[Diploma of Accounting](https://www.tafensw.edu.au/offering/-/o/o/FNS50217-01V02-20OTE-011/Diploma-of-Accounting)
+[Certificate IV in Photography and Photo Imaging](https://www.tafensw.edu.au/course/-/c/c/CUA41115-01/Certificate-IV-in-Photography-and-Photo-Imaging)
