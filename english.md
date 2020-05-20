@@ -35,3 +35,7 @@ horticulture | the act or practice of garden cultivation and management
 arboricutlre | the cultivation of trees and shrubs
 turf | a surface that consists of soil with grass on top
 smallgoods | refer to small meat products such as ham or pepperoni
+mojo | charm
+quilt | you use it to cover and keep you warm when you sleep | australian wool quilt
+ephemeral | lasting for a very short period of time
+readiness | the state of being ready for something

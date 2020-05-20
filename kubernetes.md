@@ -1,29 +1,36 @@
 # Kubernetes
 
+# 0. Terminology
+- container runtime
+- kubelet
+
+
 # 1. Docker Basics
 
-steps
+Steps
 - create docker image
-docker build -t quickstart-image .
-docker tag quickstart-image gcr.io/[PROJECT-ID]/quickstart-image:tag1
-docker push gcr.io/[PROJECT-ID]/quickstart-image:tag1
-docker pull gcr.io/[PROJECT-ID]/quickstart-image:tag1
-gcloud container images delete gcr.io/[PROJECT-ID]/quickstart-image:tag1 --force-delete-tags
+- docker build -t quickstart-image .
+- docker tag quickstart-image gcr.io/[PROJECT-ID]/quickstart-image:tag1
+- docker push gcr.io/[PROJECT-ID]/quickstart-image:tag1
+- docker pull gcr.io/[PROJECT-ID]/quickstart-image:tag1
+- gcloud container images delete gcr.io/[PROJECT-ID]/quickstart-image:tag1 --force-delete-tags
 - kubernete yaml file
 
 
-[From](https://docs.docker.com/engine/reference/builder/#from)
-
 ```docker
-# docker file command
+# docker file syntax
 
 FROM [--platform=<platform>] <image>[:<tag>] [AS <name>]
+
+ENTRYPOINT
+
+CMD
 
 ```
 
 # 2. Core Concepts
 
-**components**
+Components
 - api server
 - etcd
 - scheduler
@@ -32,9 +39,9 @@ FROM [--platform=<platform>] <image>[:<tag>] [AS <name>]
 - container runtime
 
 
-# 2.1 workloads
+# 2.1 Workloads
 
-## 2.1.1 pod
+## 2.1.1 Pod
 
 the smallest unit, can have more than one containers running
 
@@ -49,9 +56,14 @@ kubectl get pods -n <namespace>
 kubectl get pod <pod-name> -o yaml > pod-definition.yaml  # get pod definition file
 kubectl edit pod <pod-name>
 kubectl get replicationcontroller
+
+# use selector to retrieve info from matched pods
+
+kubectl get pods -l environment=production,tier=frontend # equality-based
+kubectl get pods -l 'environment in (production),tier in (frontend)' # set-based
 ```
 
-## 2.1.2 replicaSet
+## 2.1.2 ReplicaSet
 
 ```yaml
 ...
@@ -95,36 +107,284 @@ kind: namespaces
 kind: service
 ```
 
-## 2.2 configuration
+## 2.1.6 Imperative command
+
+```bash
+kubectl run --generator=run-pod/v1 nginx-pod --image=nginx:alpine
+
+# expose servian from a pod
+kubectl expose pod redis --port=6379 --name redis-service
+
+# create deployment and scale
+kubectl create deployment webapp --image=kodekloud/webapp-color
+kubectl scale deployment/webapp --replicas=3
+
+# flag
+-o output 
+-l label
+
+```
+
+
+# 2.2 Configuration
+
+patterns:
+- define command and arguments for a container
+- define environment variable
+- expose pod information via env_var
+- distribute credential using secrets
+- inject information using PodPreset
 
 `command` ---> ENTRYPOINT 
 
 `args` ---> CMD
 
-## configMaps
+```yaml
+spec:
+  container:
+    image: nginx
+    args: ['run', 'a'] 
+```
 
-SecurityContexts
+## 2.2.1 configMaps
 
-## Secrets
+```bash
+kubectl get configmaps
+kubectl create configmap <cm-name> --from-literal=<key>=<name>
+```
 
-## ServiceAccounts
-> gsa ---> ksa ---> kubectl annotate
+```yaml
+# how to defind configmap in container block
 
-taint? what's the use case?
-affinity? tolerations? 
+      envFrom:
+      - configMapRef:
+          name: special-config
 
-## 2.3 multi-container pods
+```
 
-sidecar, use cases: logging services
+## 2.2.2 Secrets, SecurityContexts
 
-adapter
+```bash
+kubectl get secrets
 
-ambassador
+# create new secret
+
+kubectl create secret generic db-secret --from-literal=DB_Host=sql01 --from-literal=DB_User=root --from-literal=DB_Password=password123
+```
+
+secret type
+- service account
+- secret
+- Opaque
+
+```yaml
+# use secret in image block
+
+envFrom:
+- secretRef:
+    name: special-config
+```
+
+```bash
+# security contexts
+
+kubectl exec ubuntu-sleeper whoami
+
+```
+
+## 2.2.3 Resource Limits
+
+[Assign CPU resources ot Containers and Pods](https://kubernetes.io/docs/tasks/configure-pod-container/assign-cpu-resource/)
+
+```yaml
+# container resources and limits
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cpu-demo-2
+  namespace: cpu-example
+spec:
+  containers:
+  - name: cpu-demo-ctr-2
+    image: vish/stress
+    resources:
+      limits:
+        cpu: "100"
+      requests:
+        cpu: "100"
+    args:
+    - -cpus
+    - "2"
+```
+
+## 2.2.4 Service Account
+
+Usage:
+> To communicate with the API server, a Pod uses a ServiceAccount containing an authentication token.
 
 
-## 2.4 observability
+```yaml
+# service account
 
-readiness probes
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: build-robot
+
+```
+
+```bash
+# create via cli
+
+kubectl apply -f - <<EOF
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: build-robot
+EOF
+
+# retrieve token
+
+kubectl describe secret <dashboard-sa-secret-name>
+
+# example
+
+$ kubectl get secret default-token-dffkj -o yaml
+
+apiVersion: v1
+data:
+ ca.crt: LS0tLS1CRU...0tLS0tCg==
+ namespace: ZGVmYXVsdA==
+ token: ZXlKaGJHY2...RGMUlIX2c=
+kind: Secret
+metadata:
+ name: default-token-dffkj
+ namespace: default
+ ...
+type: kubernetes.io/service-account-token
+```
+
+```yaml
+# binding roles to sa
+
+# sa
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+ name: demo-sa
+
+# role
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: Role
+metadata:
+ name: list-pods
+ namespace: default
+rules:
+ — apiGroups:
+   — ''
+ resources:
+   — pods
+ verbs:
+   — list
+
+# binding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: RoleBinding
+metadata:
+ name: list-pods_demo-sa
+ namespace: default
+roleRef:
+ kind: Role
+ name: list-pods
+ apiGroup: rbac.authorization.k8s.io
+subjects:
+ — kind: ServiceAccount
+   name: demo-sa
+   namespace: default
+
+```
+
+`ca.crt` is the Base64 encoding of the cluster certificate.
+
+`token` is the Base64 encoding of the JWT used to authenticate against the API server.
+
+what is the relationship between GSA and KSA?
+
+
+# 2.3 multi-container pods
+
+## 2.3.1 taint, toleration
+
+taint and toleration are mostly used together, they are mainly used to manage resources for specfic usage cases.
+
+what is effect in tolerations? e.g. `NoSchedule`, `NoExecute`
+
+```bash
+# taint
+
+kubectl taint nodes node01 spray=mortein:NoSchedule
+```
+## 2.3.2 Affinity
+
+[Node affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity
+)
+
+> node affinity allows you to constrain which nodes your pod is eligible to be scheduled on, based on labels on the node.
+
+## 2.3.3 Common patterns 
+
+Patterns:
+- sidecar
+- adapter
+- ambassador
+
+sidecar ([logging services](https://kubernetes.io/docs/concepts/cluster-administration/logging/))
+
+[Using a sidecar container with the logging agent](https://kubernetes.io/docs/concepts/cluster-administration/logging/#using-a-sidecar-container-with-the-logging-agent)
+
+```yaml
+# create sidecar container for storing logging
+
+apiVersion: v1
+kind: Pod
+metadata: app
+  name: app
+  namesapce: elastic-stack
+  labels:
+    name: app
+spec:
+  containers:
+  - name: app
+    image: kodekcloud/event-simulator
+    volumeMounts:
+    - mountPath: /log
+      name: log-volume
+  
+  - name: sidecar
+    image: kodekloud/filebeat-configured
+    volumeMounts:
+    - mountPath: /var/log/event-simulator/
+      name: log-volume
+  
+  volumes:
+  - name: log-volume
+    hostPath:
+      path: /var/log/webapp
+      type: DirectoryOrCreate
+
+```
+
+# 2.4 observability
+
+## 2.4.1 Pod Lifecycle
+
+[Pod Liftcycle](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/)
+
+Container probes
+- livenessProbe
+- readinessProbe
+- startupProbe
 
 basically it detects if the application is ready for receiving traffic
 
@@ -134,36 +394,101 @@ basically it detects if the application is ready for receiving traffic
 - Error
 - completeed
 
-liveness probes
+## 2.4.1 Logging
 
-how k8s handle logging, monitoring and debug
+logging architecture
+
+- node level logging
+- cluster level logging
+
+You should remember that native kubernetes does not support extensive logging mechanism. The managed service like GKE, EKS makes life easier at some cost.
+
+logging agent options:
+- stackdriver monitoring
+- elastic search
+
 
 ```bash
 kubectl logs -f <pod-name> <container-name>
 ```
-stackdriver monitoring
 
-## 2.5 pod design
+## 2.4.2 Monitoring
 
-labels, selectors, annotation
+In GKE, cloud monitoring makes the monitoring an ease to use.
+Apart from that, datadog is a go-to option in the industry.
 
-```yaml
-selector:
-  matchLables:
-    type: <type-name>
+# 2.5 Pod Design
+
+## 2.5.1 labels, selectors
+
+```bash
+# use label to retrieve info
+kubectl get pods -l <label name>
+
+# Identify the POD which is 'prod', part of 'finance' BU and is a 'frontend' tier? 
+# set based syntax
+kubectl get pods -l 'env in (prod), bu in(finance), tier in (frontend)'
+# equality based syntax
+kubectl get pods -l env=prod, bu=finance, tier=frontend
+
+# select resources based on resource fields
+kubectl get pods --field-selector status.phase=Running
 
 ```
 
-rolling updates
+```yaml
+# metadata block has pre-defined key, including name, labels, while within labels, fields can be defined freely.
 
-rollbacks
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "{{ APP_NAME }}-{{ENVIRONMENT}}"
+  labels:
+    app: "{{ APP_NAME }}-{{ENVIRONMENT}}"
+    env: {{ ENVIRONMENT }}
+    app.kubernetes.io/name: "{{ APP_NAME }}-{{ENVIRONMENT}}"
+    app.kubernetes.io/version: "{{ APP_VERSION }}"
+    app.kubernetes.io/component: dataflow
+    app.kubernetes.io/managed-by: chappie
+# selector's label name should match labels field inside template
+spec:
+  selector:
+      matchLabels:
+        app: {{ APP_NAME }}-{{ENVIRONMENT}} 
+  template:
+    metadata:
+      labels:
+        app: {{ APP_NAME }}-{{ENVIRONMENT}} # should match selector label
+```
+
+## 2.5.2 Rolling updates
+
+strategy type:
+- RollingUpdate
+  - 25% max unavailable, 25$ max surge
+  - Recreate
+- RollingBacks
+
 
 ```bash
+kubectl edit deployment frontend
 kubectl set image <deployment-name> <image-name>
 kubectl rollout status <deployment-name>
 kubectl rollout history <deployment-name>
 kubectl rollout undo <deployment-name>
+
+# interacting with k8s pods/node
+kubectl exec --namespace=<ns> curl -- sh -c '<doing something>'
 ```
+
+## 2.5.3 Job 
+
+job is basically a task to achieve certian goals. You can set `backoffLimit` which tells it to retry up to how many times until the goal is achieved.
+
+what kind of tasks are suitable to run as job:
+- non-parallel job
+- parallel jobs with a work queue
+- parallel jobs with a fixed completion count
 
 jobs: one-off run
 
@@ -173,12 +498,41 @@ restartPolicy: Never/Always
 
 parallelism: 3
 
+## 2.5.4 CronJob
+
+looks like job and cronjob support different fields in spec
+
 ```yaml
-CronJob:
-schedule: "0 0 3 ? * * *"
+# cronjob configuration
+
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: hello
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: <container_name>
+          restartPolicy: OnFailure
+
 ```
 
-## 2.6 service & networking
+[CRON expression generator](https://www.freeformatter.com/cron-expression-generator-quartz.html)
+
+Field name   | Mandatory? | Allowed values  | Allowed special characters
+----------   | ---------- | --------------  | --------------------------
+Seconds      | Yes        | 0-59            | * / , -
+Minutes      | Yes        | 0-59            | * / , -
+Hours        | Yes        | 0-23            | * / , -
+Day of month | Yes        | 1-31            | * / , - ?
+Month        | Yes        | 1-12 or JAN-DEC | * / , -
+Day of week  | Yes        | 0-6 or SUN-SAT  | * / , - ?
+
+# 2.6 service & networking
 
 services
 
@@ -190,9 +544,35 @@ egress
 
 network traffic
 
-## 2.7 state persistence
+# 2.7 State Persistence
 
-persistent volumns
+persistent volumes
+
+PersistentVolumnClaims
+
+```yaml
+# PV
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv0003
+spec:
+  capacity:
+    storage: 5Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: slow
+  mountOptions:
+    - hard
+    - nfsvers=4.1
+  nfs:
+    path: /tmp
+    server: 172.17.0.2
+
+```
 
 mounts
 

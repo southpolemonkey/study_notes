@@ -1,3 +1,5 @@
+# data science 
+
 ## Auto ML
 
 - H2O
@@ -38,18 +40,27 @@ def reduce_group(grps,c='V'):
 reduce_group(grps)
 ```
 
-## Interesting Websites
-http://www.ccom.ucsd.edu/~cdeotte/programs/neuralnetwork.html
-
-[graph database in Enterprise content management](https://neo4j.com/graphgist/enterprise-content-management-with-neo4j)
-
 ## Models
 
-Random Forest
-XGBoost
-lightGBM
+- Random Forest
+- XGBoost
+- lightGBM
 
 ## Good notebooks
 
 [titanic dataset](https://www.kaggle.com/gunesevitan/titanic-advanced-feature-engineering-tutorial/notebook)
 
+
+## Interesting Websites
+
+http://www.ccom.ucsd.edu/~cdeotte/programs/neuralnetwork.html
+
+[graph database in Enterprise content management](https://neo4j.com/graphgist/enterprise-content-management-with-neo4j)
+
+[veekaybee - data science is different](https://veekaybee.github.io/2019/02/13/data-science-is-different/)
+
+what skillsets a  good ds needs
+- Spin up R server and deploy R in production
+- Optimize Spark jobs
+- Version controlling data and SQL
+- work with lots of JSON

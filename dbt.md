@@ -4,6 +4,32 @@
 
 ["incremental" deploy](https://github.com/fishtown-analytics/dbt/issues/48)
 
+## Good practice
+
+```sql
+ 
+-- Good 
+     
+ SELECT
+   id                    AS account_id,
+   name                  AS account_name,
+     
+   -- Foreign Keys
+   ownerid               AS owner_id,
+   pid                   AS parent_account_id,
+   zid                   AS zuora_id,
+     
+   -- Logical Info
+   opportunity_owner__c  AS opportunity_owner,  
+   account_owner__c      AS opportunity_owner_manager,
+   owner_team_o__c       AS opportunity_owner_team,
+     
+   -- metadata
+   isdeleted             AS is_deleted,
+   lastactivitydate      AS last_activity_date
+ FROM table
+
+```
 
 ## FAQ
 
@@ -87,6 +113,3 @@ from {{ref('my_model')}}
 ```
 
 `pivot` and `unpivot`
-
-
-
