@@ -469,7 +469,6 @@ strategy type:
   - Recreate
 - RollingBacks
 
-
 ```bash
 kubectl edit deployment frontend
 kubectl set image <deployment-name> <image-name>
@@ -532,23 +531,126 @@ Day of month | Yes        | 1-31            | * / , - ?
 Month        | Yes        | 1-12 or JAN-DEC | * / , -
 Day of week  | Yes        | 0-6 or SUN-SAT  | * / , - ?
 
-# 2.6 service & networking
+# 2.6 Service & Networking
 
-services
+## 2.6.1 Services
+
+services discovery
+
+```yaml
+# sample yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  selector:
+    app: MyApp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 9376
+
+```
+
+## 2.6.2 Network Policies
 
 ingress
 
-ingress controller
-
 egress
 
-network traffic
+How to access deployments in other namespaces
 
+[Nginx Ingress rewrite](https://kubernetes.github.io/ingress-nginx/examples/rewrite/)
+
+
+```yaml
+# create a new service
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: test-ingress
+  namespace: critical-space
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /pay
+        backend:
+          serviceName: pay-service
+          servicePort: 8282
+```
+
+```yaml
+# > Create a network policy to allow traffic from the 'Internal' application only to the 'payroll-service' and 'db-service'
+
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: <policy-name>
+spec:
+  podSelector:
+    matchLabel:
+      name: internal
+  policyTypes:
+  - Egress
+  - Ingress
+  ingress:
+    - {}
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          name: <pod_name_1>
+    ports:
+    - protocol: TCP
+      port: <port>
+  
+  - to:
+    - podSelector:
+        matchLabels:
+          name: <pod_name_2>
+    ports:
+    - protocol: TCP
+      port: <port>
+
+```
+
+```bash
+# example ingress resources
+
+master $ kubectl describe ingresses.networking.k8s.io ingress-wear-watch -n app-space
+Name:             ingress-wear-watch
+Namespace:        app-space
+Address:
+Default backend:  default-http-backend:80 (<none>)
+Rules:
+  Host  Path  Backends
+  ----  ----  --------
+  *
+        /wear    wear-service:8080 (10.32.0.2:8080)
+        /watch   video-service:8080 (10.32.0.3:8080)
+Annotations:
+  nginx.ingress.kubernetes.io/rewrite-target:  /
+  nginx.ingress.kubernetes.io/ssl-redirect:    false
+Events:
+  Type    Reason  Age    From                      Message
+  ----    ------  ----   ----                      -------
+  Normal  CREATE  6m21s  nginx-ingress-controller  Ingress app-space/ingress-wear-watch
+  Normal  UPDATE  6m20s  nginx-ingress-controller  Ingress app-space/ingress-wear-watch
+
+```
 # 2.7 State Persistence
 
-persistent volumes
+Goal: Understand PersistentVolumeClaims for storage
 
-PersistentVolumnClaims
+[doc link](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims)
+
+`persistentVolumeClaim` is used to mount a PersistentVolume into a Pod. 
 
 ```yaml
 # PV

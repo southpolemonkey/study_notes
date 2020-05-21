@@ -39,3 +39,6 @@ mojo | charm
 quilt | you use it to cover and keep you warm when you sleep | australian wool quilt
 ephemeral | lasting for a very short period of time
 readiness | the state of being ready for something
+marketing lead | a potential customer
+daunting | seeming difficult to deal with, intimidating
+prompt | to make someone decide to do something | What promoted you to use my service?

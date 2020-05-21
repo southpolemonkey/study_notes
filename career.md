@@ -30,3 +30,5 @@ Design schemas for financial, sales and support data in the data warehouse.
 [Diploma of Accounting](https://www.tafensw.edu.au/offering/-/o/o/FNS50217-01V02-20OTE-011/Diploma-of-Accounting)
 
 [Certificate IV in Photography and Photo Imaging](https://www.tafensw.edu.au/course/-/c/c/CUA41115-01/Certificate-IV-in-Photography-and-Photo-Imaging)
+
+[Real Estate Agent Licence](https://www.fairtrading.nsw.gov.au/housing-and-property/property-professionals/recent-law-reforms/real-estate-agents-licence)

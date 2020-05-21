@@ -19,6 +19,7 @@ comparison: higher rate, including both interest and associated fees
 
 balance offset account
 
+refinance: the replacement of an existing debt obligation with another debt
 
 ## How Home loan works?
 
@@ -58,3 +59,4 @@ Suburb name: Castel Hills, Schofields, Rouse Hill
 
 [Domain House Price report](https://www.domain.com.au/research/house-price-report/march-2020/#darwin)
 [Home loan application checklist](https://www.domain.com.au/home-loans/guides/apply-for-home-loan/)
+[Melissa Maimann Buyer's Agent](https://mumstheword-northshore.com.au/melissa-maimann-buyers-agent)
