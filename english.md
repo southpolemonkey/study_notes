@@ -35,3 +35,9 @@ horticulture | the act or practice of garden cultivation and management
 arboricutlre | the cultivation of trees and shrubs
 turf | a surface that consists of soil with grass on top
 smallgoods | refer to small meat products such as ham or pepperoni
+gravitas | a serious and impressive attitude or way of behaving
+thesis defence | research students answers questions raised by thesis committee to get the degree
+deflation | In economics, deflation is a decrease in the general price level of goods and services
+amotization | gradually write off the initial cost
+derivative | In finance, a derivative is a contract that derives its value from the performance of an underlying entity.
+options | In finance, a right to buy or sell something at the specified price within a set time

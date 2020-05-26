@@ -24,3 +24,19 @@ Design schemas for financial, sales and support data in the data warehouse.
 [Job Outlook](https://www.joboutlook.gov.au/)
 [Diploma of Accounting](https://www.tafensw.edu.au/offering/-/o/o/FNS50217-01V02-20OTE-011/Diploma-of-Accounting)
 [Certificate IV in Photography and Photo Imaging](https://www.tafensw.edu.au/course/-/c/c/CUA41115-01/Certificate-IV-in-Photography-and-Photo-Imaging)
+
+[Interpreter](https://www.naati.com.au/become-certified/how-do-i-become-certified/)
+- Training
+- English proficiency(pte score requirements > 76)
+- Submit application 
+- Ethical competency
+- Intercultural competency
+- Sit certification test
+
+[financial - CQF](https://www.cqf.com/)
+
+what is ecometrics?
+
+>Ecometrics is the quantitative analysis of economic, environmental, and societal systems based on the concurrent development of empirical theory, related by appropriate methods of inference in attempts to create more sustainable systems.
+
+[VAP](https://www.vanguardinvestments.com.au/retail/ret/investments/product.html#/fundDetail/etf/portId=8206/assetCode=equity/?overview)
