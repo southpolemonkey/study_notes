@@ -30,6 +30,10 @@ CMD
 
 # 2. Core Concepts
 
+Goals:
+- Understand Kubernetes API primitives
+- Create and configure basic Pods
+
 Components
 - api server
 - etcd
@@ -61,6 +65,7 @@ kubectl get replicationcontroller
 
 kubectl get pods -l environment=production,tier=frontend # equality-based
 kubectl get pods -l 'environment in (production),tier in (frontend)' # set-based
+kubectl get pod --sort-by=.metadata.creationTimestamp -n dbt-tactical-ds -o name
 ```
 
 ## 2.1.2 ReplicaSet
@@ -127,6 +132,13 @@ kubectl scale deployment/webapp --replicas=3
 
 
 # 2.2 Configuration
+
+Goals:
+- Understand ConfigMaps
+- Understand SecurityContexts
+- Define an application's resources requirements
+- Create & consume Secrets
+- Understand ServiceAccounts
 
 patterns:
 - define command and arguments for a container
@@ -314,6 +326,9 @@ what is the relationship between GSA and KSA?
 
 # 2.3 multi-container pods
 
+Goals:
+- Understand Multi-Container Pod design patterns
+
 ## 2.3.1 taint, toleration
 
 taint and toleration are mostly used together, they are mainly used to manage resources for specfic usage cases.
@@ -375,7 +390,13 @@ spec:
 
 ```
 
-# 2.4 observability
+# 2.4 Observability
+
+Goals:
+- Understand LivenessProbes and ReadinessProbes
+- Understand container logging
+- Understand how to monitor applications
+- Understand debugging in kubernetes
 
 ## 2.4.1 Pod Lifecycle
 
@@ -418,6 +439,11 @@ In GKE, cloud monitoring makes the monitoring an ease to use.
 Apart from that, datadog is a go-to option in the industry.
 
 # 2.5 Pod Design
+
+Goals:
+- Understand Deployments and how to perform rolling updates, rollbacks
+- Understand Jobs and CronJobs
+- Understand how to use Labels, Selectors and Annotations
 
 ## 2.5.1 labels, selectors
 
@@ -520,7 +546,9 @@ spec:
 
 ```
 
-[CRON expression generator](https://www.freeformatter.com/cron-expression-generator-quartz.html)
+e.g. `30 19 */1 * *` schedule the job to run everyday at 19:30 UTC
+
+[cron expression validator](https://crontab.guru/#30_19_*/1_*_*)
 
 Field name   | Mandatory? | Allowed values  | Allowed special characters
 ----------   | ---------- | --------------  | --------------------------
@@ -533,9 +561,32 @@ Day of week  | Yes        | 0-6 or SUN-SAT  | * / , - ?
 
 # 2.6 Service & Networking
 
+Goals:
+- Understand Services
+- Basic understanding of network policies
+
+Services basically give pod a static address so that another pods can work upon on these backend pods.
+
 ## 2.6.1 Services
 
-services discovery
+Multi-Port Services
+
+Discovering Services
+- Env variables
+- DNS (preferred)
+
+Publishing Services
+- ClusterIP
+- NodePort
+- LoadBalancer
+- ExternalName
+
+Supported protocols
+- TCP
+- UDP
+- HTTP
+- PROXY protocol
+- SCTP
 
 ```yaml
 # sample yaml
@@ -546,7 +597,7 @@ metadata:
   name: my-service
 spec:
   selector:
-    app: MyApp
+    app: MyApp  # should be the name of target deployment 
   ports:
     - protocol: TCP
       port: 80
@@ -554,9 +605,22 @@ spec:
 
 ```
 
+```bash
+# expose deployments as service in a namespace
+# question: how to specify the app name to be exposed via selector?
+
+kubectl expose deployment -n ingress-space ingress-controller --type=NodePort --port=80 --name=ingress --dry-run -o yaml >ingress.yaml
+
+```
+
 ## 2.6.2 Network Policies
 
-ingress
+ingress type:
+- Single Service Ingress
+- Simple fanout
+- Name based virtual hosting
+- TLS
+- Loadbalancing
 
 egress
 
@@ -574,6 +638,7 @@ metadata:
   name: test-ingress
   namespace: critical-space
   annotations:
+    # why we need annotations here?
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
@@ -642,7 +707,7 @@ Events:
   ----    ------  ----   ----                      -------
   Normal  CREATE  6m21s  nginx-ingress-controller  Ingress app-space/ingress-wear-watch
   Normal  UPDATE  6m20s  nginx-ingress-controller  Ingress app-space/ingress-wear-watch
-
+  
 ```
 # 2.7 State Persistence
 
@@ -650,10 +715,38 @@ Goal: Understand PersistentVolumeClaims for storage
 
 [doc link](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims)
 
-`persistentVolumeClaim` is used to mount a PersistentVolume into a Pod. 
+Concepts:
+- Reclaim Policy
+- Access Mode
 
 ```yaml
-# PV
+# Task 1. create a volumn for log storage for in a pod
+spec:
+  containers:
+  - name: event-simulator
+    image: kodekloud/event-simulator
+  volumes:
+
+  - name: log-volume
+    hostPath:
+      path: /var/log/webapp
+      type: Directorymaster $
+
+# Task 2. create pvc to bound to pv
+
+# Task 3. use pvc in application pods
+spec:
+  # emit details here
+  volumes:
+  - name: log-volume
+    persistentVolumeClaim:
+      claimName: claim-log-1master $
+
+# Task 4. try delete pvc? try delete app and then pvc?
+```
+
+```yaml
+# Persistent Volume
 
 apiVersion: v1
 kind: PersistentVolume
@@ -674,17 +767,27 @@ spec:
     path: /tmp
     server: 172.17.0.2
 
+# Persistent Volume Claims
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: myclaim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 8Gi
+  storageClassName: slow
+  selector:
+    matchLabels:
+      release: "stable"
+    matchExpressions:
+      - {key: environment, operator: In, values: [dev]}
+
 ```
-
-mounts
-
-how k8s store generated data?
-
-volumnStore: mountPath
-
-`PersisentVolume`
-
-`PersistentVolumnClaim`
 
 Optional topics
 - static provisioning

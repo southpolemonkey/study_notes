@@ -26,9 +26,15 @@ find . -type f \( -name "*.json" -o -name "*.sh" \);
 
 # delete file by patterm
 find . -name "*.sql" -type f -delete
+
+# tr usage, remove white space
+tr -s " "
 ```
 
+[File find utility](https://alvinalexander.com/scala/scala-file-find-utility-command/)
+
 ### grep
+
 ```bash
 # regular expressions
 # -------------------

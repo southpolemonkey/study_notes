@@ -79,7 +79,6 @@ df_ysd.groupby(['Entity Group ID']).filter(lambda x: x['Entity Group ID'].size >
 6. (df.label_x == df.label_y).value_counts()
 From <https://stackoverflow.com/questions/26988041/pandas-dataframe-row-wise-comparison> 
 7. Remove Nanhttps://stackoverflow.com/a/45695390/6716236
-```
 
 ## Is pandas thread safe
 
@@ -87,8 +86,69 @@ https://stackoverflow.com/a/55382886/6716236
 
 
 ## Performance Enhancement
+
 - cython
 - numba
 
 ## shuffle dataframe
+
 df.sample(frac=1)
+
+## date functions
+
+- date_range(start, end, [period], freq)
+- bdate_range()
+- period_range()
+- timedelta_range()
+
+## Init a random dataframe
+
+df = pd.DataFrame(np.random.randn(10, 4))
+rng = pd.date_range('1/1/2012', periods=100, freq='S')
+
+## Concat, Merge, Reshape
+
+Top-down append: pd.concat([df1, df2, df3])
+
+left-right append:  pd.concat([df1, df2, df3], axis=1)
+
+reshape method:
+- stack, unstack
+- pivot_table(df, values=<col_for_value>, index=[list_of_dim_names], columns=?)
+
+## count by groups
+
+df.sort_values(by=<col_name>)
+
+df.groupby(<col_name>).size()
+
+the second method also show empty categories
+
+
+## basic plotting
+
+series.plot()
+
+df.plot()
+
+[doclink](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#plotting)
+
+
+## FAQ
+
+if truth statements
+```python
+if pd.Series([False, True, False]):
+  # will give you an error, the correct way to use is via any(), all(), empty() etc
+```
+
+NA, Integer NA values, NaN
+
+- Int8Dtype
+- Int16Dtype
+- Int32Dtype
+- Int64Dtype
+
+
+[custom describe](https://numpy.org/numpy-financial/)
+

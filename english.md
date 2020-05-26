@@ -42,3 +42,12 @@ readiness | the state of being ready for something
 marketing lead | a potential customer
 daunting | seeming difficult to deal with, intimidating
 prompt | to make someone decide to do something | What promoted you to use my service?
+mortal | not able to live for ever | Her father's death reminded her that she was mortal.
+resurrect | bring back an old activity, belief, idea that has not existed for a long time | The Home Office have resurrected plans to build a new prison just outside London.
+monopolize | to have complete control over something | He monopolized the conversation all evening
+caveat | a warning that something may not be completely true | But there are a variety of caveats in both laws
+tenacious | determined to do something and unwilling to stop trying even when the situtation becomes difficult
+relentless | strict, determined, without ever stopping
+exact | verb, to demand and get something from someone by using threats, forces | exact something from somebody
+corkage | fee charged by resturant for serving wine brought by customer themselves
+thrifty | using money carefully and wisely
