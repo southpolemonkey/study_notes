@@ -23,6 +23,32 @@ Design schemas for financial, sales and support data in the data warehouse.
 
 [readling list github](https://github.com/2007anu/myBooks)
 
+foxtel - customer insight analysts
+
+Answering business questions:
+- How to measure if the new IQ4 boxset improves customer satisfaction?
+- How would you set up a control group?
+- How much do you know about recommender systems?
+
+Managing business stakeholders:
+- How would you handle requests from multiple stakeholders?
+- How would you approach working on multiple projects for different stakeholders when there is no clear way to prioritize between them?
+
+Communication skills:
+- Previous experience on presenting results to clients?
+
+General problem solving:
+- If you had to order pizza for 50 people how would you figure out how much pizza to order?
+
+Previous projects:
+- Describe a previous analytics projects you’ve been involved in
+- What is the favourite project you’ve completed?
+
+## Some good sentences I can put in resume
+
+1. Are constantly updating your knowledge, engaging with the wider community (e.g. conferences/MeetUps), and continuously learning.
+
+
 # sideline
 
 [Job Outlook](https://www.joboutlook.gov.au/)

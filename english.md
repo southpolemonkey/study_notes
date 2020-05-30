@@ -57,3 +57,17 @@ relentless | strict, determined, without ever stopping
 exact | verb, to demand and get something from someone by using threats, forces | exact something from somebody
 corkage | fee charged by resturant for serving wine brought by customer themselves
 thrifty | using money carefully and wisely
+hoslitic | considering a person or thing as a whole, rather than as separate parts | a hoslitic approach to design
+reminisce | enjoyable recollection of past events
+hair whorl | a patch of hair growing in a circular direction around a visible center point
+enbankment | a wall built with stone or earth to prevent the flood
+defunct | no longer existing | It entered service with Pegasus Airlines in 2016 after operating for now-defunct Air Berlin.
+taxiway | a route along which an aircraft can taxi when run or move from runway
+shakeup | a radical reorganization
+curate | collect, organize information
+mangroves
+enclosure | an area surrounded by barriers
+dragonfly | 蜻蜓
+albatrosses | 信天翁
+prey | animals killed and become food of others
+vulture | 秃鹫
