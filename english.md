@@ -71,3 +71,6 @@ dragonfly | 蜻蜓
 albatrosses | 信天翁
 prey | animals killed and become food of others
 vulture | 秃鹫
+county | a terrtorial division of a country, such as local government area
+thaw | ice food become liquid | thaw the frozen steak
+conveyancing | The legal work involved in preparing the sales contract, mortgage and other related documents

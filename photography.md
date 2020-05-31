@@ -2,7 +2,15 @@
 
 ## FAQ
 
-which focus mode should use for videoing motion object?
+Q: which focus mode should use for videoing motion object?
+
+A: On Canon, it is called `AI Servo`
+
+Q: how to choose the appropriate stopper filter in landscape photography?
+
+A: measure sky and earth respectively, and substract the shutte speed (1 stopper means three rolls of your shutter controller) 
+
+## Landscape photography
 
 rerference paramaters setting for shooting waterfall
 
@@ -10,6 +18,7 @@ rerference paramaters setting for shooting waterfall
 - dawn at camp cove: iso100, 24mm, f7.1, 79' exposure (apply ND filter)
 
 landscape photography equipments
+- ND, gradient ND filter
 - cpl
 - LEE filter
 
@@ -18,6 +27,8 @@ landscape photography equipments
 tips for choosing used cameras
 
 - shutter usage (>30000 is relatively high)
+
+## birding watching
 
 [centential park birding watching](https://www.centennialparklands.com.au/visit/things-to-see-and-do/birdwatching/bird-spotting-challenge)
 
@@ -35,8 +46,12 @@ bird species:
 
 Good learning resources
 
-- [Guo jing channel](https://www.youtube.com/watch?v=mZLFGamhpBI)
+manage and select pictures, think from a perspective of how to create a series from my pictures, watch [Guo jing channel](https://www.youtube.com/watch?v=mZLFGamhpBI)
 
-[qianli - how to use ND filter](https://www.youtube.com/watch?v=H1B5Jut96tc)
+a series of four videos illustrating how to use filters in landscape photography, watch [qianli - how to use ND filter](https://www.youtube.com/watch?v=H1B5Jut96tc)
 
-学着以系列的角度去挑选照片
+at some point, you may want to publish your projects, here are a couple of options
+- flickr
+- zenportfolio
+
+
