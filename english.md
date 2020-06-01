@@ -57,3 +57,6 @@ relentless | strict, determined, without ever stopping
 exact | verb, to demand and get something from someone by using threats, forces | exact something from somebody
 corkage | fee charged by resturant for serving wine brought by customer themselves
 thrifty | using money carefully and wisely
+enamel | 搪瓷, porcelain enamel, is a material made by fusing powdered glass to a substrate by firing
+caborossi | a long and dry saussage from eastern europe, with smokey flavor
+perpetual | continuing all the time without changing or stopping | the perpetual noise of the machines

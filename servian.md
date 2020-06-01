@@ -14,8 +14,8 @@ land registry - ?
 
 news corp - ?
 
-## which company do I want to work with? why?
+## which clients do I want to work with? why?
 
 cochlear - the world leading ear implant manufacturer
 
-[transurban](https://www.transurban.com/roads-and-projects/sydney) - the highway operator
+[transurban](https://www.transurban.com/roads-and-projects/sydney) - the highway operator, get toll road usage pattern, flow analysis
