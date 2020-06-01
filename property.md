@@ -60,3 +60,4 @@ Suburb name: Castel Hills, Schofields, Rouse Hill
 [Domain House Price report](https://www.domain.com.au/research/house-price-report/march-2020/#darwin)
 [Home loan application checklist](https://www.domain.com.au/home-loans/guides/apply-for-home-loan/)
 [Melissa Maimann Buyer's Agent](https://mumstheword-northshore.com.au/melissa-maimann-buyers-agent)
+[good school guide](https://www.goodschools.com.au/compare-schools)
