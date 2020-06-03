@@ -1,6 +1,9 @@
-# culinary
+# culinary 
+
+## vocabulary
 
 caborossi | a long and dry saussage from eastern europe, with smokey flavor
+dutch oven
 
 
 [cook dry aged steak](https://haciendasur.com/7-tips-to-cook-dry-aged-steaks-perfectly/)

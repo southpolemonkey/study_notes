@@ -57,6 +57,11 @@ relentless | strict, determined, without ever stopping
 exact | verb, to demand and get something from someone by using threats, forces | exact something from somebody
 corkage | fee charged by resturant for serving wine brought by customer themselves
 thrifty | using money carefully and wisely
+<<<<<<< HEAD
+enamel | 搪瓷, porcelain enamel, is a material made by fusing powdered glass to a substrate by firing
+caborossi | a long and dry saussage from eastern europe, with smokey flavor
+perpetual | continuing all the time without changing or stopping | the perpetual noise of the machines
+=======
 hoslitic | considering a person or thing as a whole, rather than as separate parts | a hoslitic approach to design
 reminisce | enjoyable recollection of past events
 hair whorl | a patch of hair growing in a circular direction around a visible center point
@@ -74,3 +79,4 @@ vulture | 秃鹫
 county | a terrtorial division of a country, such as local government area
 thaw | ice food become liquid | thaw the frozen steak
 conveyancing | The legal work involved in preparing the sales contract, mortgage and other related documents
+>>>>>>> e3137fb1842a8a8a35b69f5af2d68b934c7e8414
