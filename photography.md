@@ -1,5 +1,28 @@
 # photography
 
+Photography type:
+- portrait
+ - engagament session
+ - maternity session
+- landscape
+- long exposure
+- product
+- low light
+- sport & action
+- macro
+- street & architecture
+- event & wedding
+- aerial & drone
+- widelife
+- night
+- time-lapse
+
+Term
+- exposure compensation
+- composition
+- postive space, negative space
+- focus, depth of field
+
 ## FAQ
 
 Q: which focus mode should use for videoing motion object?
@@ -44,6 +67,8 @@ bird species:
 
 [roger mackeritch photography](https://www.rogermackertichphotography.com/)
 
+[Yiming hu photography](http://majestic-nature.com/)
+
 Good learning resources
 
 manage and select pictures, think from a perspective of how to create a series from my pictures, watch [Guo jing channel](https://www.youtube.com/watch?v=mZLFGamhpBI)
@@ -53,5 +78,16 @@ a series of four videos illustrating how to use filters in landscape photography
 at some point, you may want to publish your projects, here are a couple of options
 - flickr
 - zenportfolio
+
+[macro-photography-examples](https://www.thephotoargus.com/beautiful-examples-of-macro-photography/)
+
+# Workflow 
+
+picture management
+
+[Photography best practice](https://www.dpbestflow.org/links/36)
+- postive space, negative space
+
+
 
 
