@@ -28,6 +28,14 @@ CMD
 
 ```
 
+troubleshooting
+
+```bash
+# docker-compose cannot kill network
+docker network inspect <network_name>
+docker network disconnect -f <network_name> <container_name>
+```
+
 # 2. Core Concepts
 
 Goals:

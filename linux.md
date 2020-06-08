@@ -80,6 +80,7 @@ how does `sed` work
 [alvin alexander blog](https://alvinalexander.com/linux-unix/)
 
 ## vim
+
 ```vim
 undo: u
 redo: ctrl+r, :redo
@@ -87,7 +88,21 @@ move to file end: $
 ```
 [vim tutorial](https://vim.fandom.com/wiki/Shifting_blocks_visually)
 
+how to enable KeyRepeat macOs?
+
+```bash
+defaults write -g ApplePressAndHoldEnabled -bool false
+defaults write -g ApplePressAndHoldEnabled -bool true
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+```
+
+install plugins
+
+
 ## Process
+
+`lsof -i:8080` check pid occupying the target port
+ 
 `lsof -p pid` list open files for the given process
 
 ```bash
@@ -169,3 +184,15 @@ weird symbols in bash
 ### 2>&1 meaning
 
 > >& is the syntax to redirect a stream to another file descriptor - 0 is stdin, 1 is stdout, and 2 is stderr.
+
+## shadowsocks
+
+install
+
+## automatically start
+
+```bash
+# suppose run as superuser
+update-rc.d script_name defaults 
+
+```
