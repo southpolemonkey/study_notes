@@ -81,3 +81,4 @@ sterile | free from bacteria, totally clean
 tincture | a medicine made by dissolving a drug in alcohol
 has yet been | meaning something hasn't been done 
 tangential | not relevant
+hoot | a sound owls make
