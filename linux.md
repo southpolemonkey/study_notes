@@ -371,9 +371,46 @@ syslog
 - DHCP
 
 ```bash
+ping
+
 ifconfig
+
 traceroute
 
+netstat -rnitlp
+
+tcpdump
+
+telnet
+
 ```
+
+## shell
+
+`man test`
+
+```bash
+-e exists
+-z trur if string is empty
+-ne
+-eq
+
+if [ condition ] then ... fi
+
+for a in b do .... done
+```
+
+
+use last item of a command, use `!$`
+
+
+
+
+
+
+
+
+
+
 
 
