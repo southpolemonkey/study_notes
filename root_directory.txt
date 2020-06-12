@@ -1,0 +1,31 @@
+h
+├── Applications
+├── Library
+├── System
+├── Users
+├── Volumes
+├── bin
+├── cores
+├── dev
+├── etc -> private/etc
+├── home -> /System/Volumes/Data/home
+├── opt
+├── private
+├── sbin
+├── tmp -> private/tmp
+├── usr
+└── var -> private/var
+
+16 directories, 0 files
+
+
+## linux root folder directory
+
+```
+/ 
+/bin binaries and other executable programs
+/etc system configuration files
+/home home directories
+/opt optional or third party software
+/tmp temporary space, typicall cleared on reboot
+```

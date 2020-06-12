@@ -58,15 +58,24 @@ egrep -ri "json|yaml" .
 How to extract match group?
 `grep -oP 'foobar \K\w+'`
 
-### tar/untar 
-```bash
-gunzip
-```
+### Compress, tar/untar 
 
-### cut, sort
 ```bash
-awk -F "|" '{ print $4 }' Notes.data
+tar: bundle files
+-c create a tar archive
+-x extract files
+-t display tables of contents
+-v verbose
+-z use compression
+-f use this file
 
+# compress
+gzip, gunzip 
+gzcat
+zcat
+
+tar zcf filename.tgz
+tar ztv
 # sort
 sort -h  # sort by size
 sort -V  # sort by version number
@@ -80,6 +89,7 @@ how does `sed` work
 [alvin alexander blog](https://alvinalexander.com/linux-unix/)
 
 ## vim
+
 ```vim
 undo: u
 redo: ctrl+r, :redo
@@ -87,7 +97,21 @@ move to file end: $
 ```
 [vim tutorial](https://vim.fandom.com/wiki/Shifting_blocks_visually)
 
+how to enable KeyRepeat macOs?
+
+```bash
+defaults write -g ApplePressAndHoldEnabled -bool false
+defaults write -g ApplePressAndHoldEnabled -bool true
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+```
+
+install plugins
+
+
 ## Process
+
+`lsof -i:8080` check pid occupying the target port
+ 
 `lsof -p pid` list open files for the given process
 
 ```bash
@@ -169,3 +193,224 @@ weird symbols in bash
 ### 2>&1 meaning
 
 > >& is the syntax to redirect a stream to another file descriptor - 0 is stdin, 1 is stdout, and 2 is stderr.
+
+## shadowsocks
+
+install
+
+## automatically start
+
+```bash
+# suppose run as superuser
+update-rc.d script_name defaults 
+
+```
+
+## udemy course structure
+
+`$PATH`
+
+## file and directory permissions
+
+- symbolic permissions
+- numeric permissions
+- file vs directory permissions
+- change permissions
+- work with groups
+- file creation mask
+
+groups
+- u: User
+- g: groups
+- o: other
+- a: all
+
+type:user:group:others
+
+find files
+- find
+- locate
+
+## viewing files
+
+- cat
+- more
+- less
+
+
+## i/o
+
+STDIN: 0
+STDOUT: 1
+STDERR: 2
+
+```bash
+> redirect stdout to file
+>> redirect to file, append
+< redirect input from a file to a command
+& used with redirection to signal that a file discriptor is used
+2>&1 combin stderr and stdout
+2>file redirect stderr to a file
+>/dev/null redirect output to nowhere
+
+```
+
+- diff
+- sdiff
+- vimdiff
+
+## search in files
+
+- grep
+- file
+- cut
+- tr
+- colum
+
+## tranfer files over network
+
+- sftp
+- scp
+- ftp
+
+## environment variables
+
+env is mainly uppercase by convention, and is case sensitive
+
+`printenv` 
+
+
+## process
+
+```bash
+ps
+kill
+<command> & : run job background
+jobs : list running jobs
+bg : send job to background
+fg : send job to foreground
+
+cron
+crontab
+
+* /15 * * *  <command> run every 15 minitues
+```
+## user managerment
+
+```bash
+su 
+su -c command 
+sudo -l
+sudo su 
+sudo su -
+sudo su - username
+
+```
+## shell history
+
+```bash
+~/.bash_history
+~/.history
+~/.hisfile
+
+```
+
+## packges, package manager
+
+```bash
+# macOs
+brew list
+
+# deb based distros(debian, ubuntu, mint)
+apt-get install package
+apt-get remove (remove package, leave config)
+apt-get pruge package (remove package and config)
+apt-cache show package
+
+dkpg install 
+
+
+# red hat distros
+yum seatch string
+yum info
+yum install [-y] package
+yum remove package
+
+rpm -qa list all installed packages
+rpm -e remove package
+```
+
+## boot process
+
+- BIOS(basic input/output system)
+  - bootables devices(hard drives, usb drives, dvd drives...)
+- boot loaders start operating system
+  - LILO (Linux Loader
+  - GRUB (Grand Unified Bootloader)
+- linux kernel
+  - vmlinux
+  - vmlinuz
+  - dmesg
+- run levels, targets
+  - systemd
+  - systemctl
+  - reboot
+  - shutdown
+  - telinit
+  - poweroff
+
+## system logging
+
+syslog
+
+## networking
+
+- ip address, broadcast address, mask 
+- network class (A,B,C)
+- DNS
+- DHCP
+
+```bash
+ping
+
+ifconfig
+
+traceroute
+
+netstat -rnitlp
+
+tcpdump
+
+telnet
+
+```
+
+## shell
+
+`man test`
+
+```bash
+-e exists
+-z trur if string is empty
+-ne
+-eq
+
+if [ condition ] then ... fi
+
+for a in b do .... done
+```
+
+
+use last item of a command, use `!$`
+
+
+
+
+
+
+
+
+
+
+
+

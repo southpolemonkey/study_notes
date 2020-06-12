@@ -21,5 +21,8 @@ Total = 800+600+770+360 + 2000 + 560 = 5090
 
 Budget: $5k~6k
 
+Activities:
+- Rotorua spring
+
 
 

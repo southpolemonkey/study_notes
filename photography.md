@@ -1,5 +1,28 @@
 # photography
 
+Photography type:
+- portrait
+ - engagament session
+ - maternity session
+- landscape
+- long exposure
+- product
+- low light
+- sport & action
+- macro
+- street & architecture
+- event & wedding
+- aerial & drone
+- widelife
+- night
+- time-lapse
+
+Term
+- exposure compensation
+- composition
+- postive space, negative space
+- focus, depth of field
+
 ## FAQ
 
 Q: which focus mode should use for videoing motion object?
@@ -46,6 +69,7 @@ bird species:
 [roger mackeritch photography](https://www.rogermackertichphotography.com/)
 
 [australian geography](https://www.australiangeographic.com.au/topics/wildlife/2017/02/guide-to-bird-watching-in-sydney/)
+[Yiming hu photography](http://majestic-nature.com/)
 
 Good learning resources
 
@@ -58,3 +82,16 @@ at some point, you may want to publish your projects, here are a couple of optio
 - zenportfolio
 
 [Can I convert binocular zoom to equivalent lens focal length?](https://photo.stackexchange.com/questions/87917/can-i-convert-binocular-zoom-to-equivalent-lens-focal-length)
+
+[macro-photography-examples](https://www.thephotoargus.com/beautiful-examples-of-macro-photography/)
+
+# Workflow 
+
+picture management
+
+[Photography best practice](https://www.dpbestflow.org/links/36)
+- postive space, negative space
+
+
+
+
