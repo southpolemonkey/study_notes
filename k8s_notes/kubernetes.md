@@ -22,11 +22,15 @@ Steps
 
 FROM [--platform=<platform>] <image>[:<tag>] [AS <name>]
 
-ENTRYPOINT
-
+ENTRYPOINT: set image's main command
 CMD
+ENV: provide environment variables
+ARG
+RUN
 
 ```
+
+how to speed up imgae build?
 
 # 2. Core Concepts
 
@@ -862,7 +866,7 @@ kk scale deployment/d1 --replicas=2
 kk create --edit 
 
 # connect to running container
-kubectl exec -it <pods_name> -- /bin/bash
+kubectl -n <namespace> exec -it <pods_name> -- /bin/bash
 
 ```
 

@@ -57,11 +57,9 @@ relentless | strict, determined, without ever stopping
 exact | verb, to demand and get something from someone by using threats, forces | exact something from somebody
 corkage | fee charged by resturant for serving wine brought by customer themselves
 thrifty | using money carefully and wisely
-<<<<<<< HEAD
 enamel | 搪瓷, porcelain enamel, is a material made by fusing powdered glass to a substrate by firing
 caborossi | a long and dry saussage from eastern europe, with smokey flavor
 perpetual | continuing all the time without changing or stopping | the perpetual noise of the machines
-=======
 hoslitic | considering a person or thing as a whole, rather than as separate parts | a hoslitic approach to design
 reminisce | enjoyable recollection of past events
 hair whorl | a patch of hair growing in a circular direction around a visible center point
@@ -79,4 +77,14 @@ vulture | 秃鹫
 county | a terrtorial division of a country, such as local government area
 thaw | ice food become liquid | thaw the frozen steak
 conveyancing | The legal work involved in preparing the sales contract, mortgage and other related documents
->>>>>>> e3137fb1842a8a8a35b69f5af2d68b934c7e8414
+temple of heaven | 天坛
+summer palace | 颐和园
+forbidden city | 紫禁城
+the Palace Musuem | 故宫博物院
+hall of supreme harmony | 太和殿
+Prince Gong Mansion | 恭王府
+autopsy | the post examniation of the cause of death
+extrapolation | the act or process of estimating the value of a variable or function outside the tabulated or observed range
+reconciliation week | It was initiated in 1996 by Council for Aboriginal Reconciliation a to celebrate Indigenous history and culture in Australia and foster reconciliation discussion and activities
+cut the ribbon | ceremony of starting the project or a building
+frequent | verb. often visit | Our third runway can accept all other aircraft types that frequent Sydney.

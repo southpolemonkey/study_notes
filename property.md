@@ -61,3 +61,8 @@ Suburb name: Castel Hills, Schofields, Rouse Hill
 [Home loan application checklist](https://www.domain.com.au/home-loans/guides/apply-for-home-loan/)
 [Melissa Maimann Buyer's Agent](https://mumstheword-northshore.com.au/melissa-maimann-buyers-agent)
 [good school guide](https://www.goodschools.com.au/compare-schools)
+
+
+home loan brokers
+
+[AFG](https://www.afghomeloans.com.au/)

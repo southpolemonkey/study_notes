@@ -36,6 +36,7 @@ bird species:
 - major mitchell cockatoo
 - sulpher-crested Cockatoo
 - rainbow lorikeet
+- laughing kookaburra
 - Peregrine Falcons
 
 [David Nobel blog](http://www.david-noble.net/blog/?tag=orchids)
@@ -43,6 +44,8 @@ bird species:
 [birdlife australia](http://www.birdlife.org.au/bird-profile/welcome-swallow)
 
 [roger mackeritch photography](https://www.rogermackertichphotography.com/)
+
+[australian geography](https://www.australiangeographic.com.au/topics/wildlife/2017/02/guide-to-bird-watching-in-sydney/)
 
 Good learning resources
 
@@ -54,4 +57,4 @@ at some point, you may want to publish your projects, here are a couple of optio
 - flickr
 - zenportfolio
 
-
+[Can I convert binocular zoom to equivalent lens focal length?](https://photo.stackexchange.com/questions/87917/can-i-convert-binocular-zoom-to-equivalent-lens-focal-length)

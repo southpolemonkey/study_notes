@@ -1,8 +1,17 @@
 # Airflow
 
+## Concept
+
+operator types:
+- action operator: execute some app (BashOperator, PythonOperator ...)
+- transfer operator: move data
+- sensor operator: waiting for data to arrive
+
 ## config
 
 `~/airflow/airflow.cfg`
+
+**CLI reference**
 
 ```bash
 # install and setup
@@ -40,12 +49,10 @@ t1 = BashOperator(
 t1.set_downstream(t2)
 t2.set_upstream(t1)
 
-# non-trivial cases
-
 t1.set_downstream([t2, t3])
 t1 >> [t2, t3]
 [t2, t3] << t1
-
+```
 
 ## core concepts
 
@@ -78,3 +85,26 @@ factory method
 https://github.com/talperetz/python-cli-template
 
 https://towardsdatascience.com/scale-your-data-pipelines-with-airflow-and-kubernetes-4d34b0af045
+
+## Airflow in distributed mode
+
+Executor:
+- sequential executor
+- local executor
+- celery executor
+
+configuration file:
+- parallelism
+- max_active_runs_per_dag
+- dag_concurrency
+
+
+airflow flower
+
+## Advanced concepts
+
+- subDAG
+- hooks: getting data from external tables
+- XComs
+- branching
+- SLA

@@ -44,4 +44,13 @@ $ nix-store -r /nix/store/z3hhlxbckx4g3n9sw91nnvlkjvyw754p-myname.drv
 
 [nix-wiki-cheatsheet](https://nixos.wiki/wiki/Cheatsheet)
 
+## sbt
+
+`settings`
+- show name
+- show dependencies
+
+`tasks`
+- runMain
+- test
 
