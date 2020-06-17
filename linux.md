@@ -1,5 +1,12 @@
 # Linux/Unix
 
+- [vim](#vim)
+- [udemy course structure](#udemy)
+  - [packges, package manager](#packges,-package-manager)
+  - [shell](#shell)
+- [Nix ecosystem](#nix-ecosystem)
+- [Shadsocks](#shadowsocks)
+
 ## commands
 
 ```bash
@@ -105,7 +112,7 @@ defaults write -g ApplePressAndHoldEnabled -bool true
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 ```
 
-install plugins
+### install vim plugins
 
 
 ## Process
@@ -192,11 +199,8 @@ weird symbols in bash
 
 ### 2>&1 meaning
 
-> >& is the syntax to redirect a stream to another file descriptor - 0 is stdin, 1 is stdout, and 2 is stderr.
+> `>&` is the syntax to redirect a stream to another file descriptor - 0 is stdin, 1 is stdout, and 2 is stderr.
 
-## shadowsocks
-
-install
 
 ## automatically start
 
@@ -206,11 +210,35 @@ update-rc.d script_name defaults
 
 ```
 
-## udemy course structure
+## udemy
 
 `$PATH`
 
 ## file and directory permissions
+
+```bash
+# linux root folder structure
+
+├── Applications
+├── Library
+├── System
+├── Users
+├── Volumes
+├── bin (binaries and other executable programs)
+├── cores
+├── dev
+├── etc -> private/etc (system configuration files)
+├── home -> /System/Volumes/Data/home (home directories)
+├── opt (optional or third party software)
+├── private
+├── sbin
+├── tmp -> private/tmp (temporary space, typicall cleared on reboot)
+├── usr
+└── var -> private/var
+
+16 directories, 0 files
+```
+
 
 - symbolic permissions
 - numeric permissions
@@ -338,7 +366,13 @@ yum remove package
 
 rpm -qa list all installed packages
 rpm -e remove package
+
+
+# others
+nixOS
+
 ```
+
 
 ## boot process
 
@@ -403,7 +437,29 @@ for a in b do .... done
 
 use last item of a command, use `!$`
 
+## Nix ecosystem
 
+- NixOS: a distribution of linux operating system
+- Nix: a package manager
+- Nixpkgs: a git repo for all installable packages
+- 
+
+```bash
+# basic command
+nix search packagename
+nix-env -iA packagename # installing a package
+nix-env -q # list installed packages
+nix-env -e package # uninstall packages
+nix-env -u # upgrade package
+
+```
+
+[good-first-step-learning-resource](https://nixos.wiki/wiki/Resources)
+
+
+## shadowsocks
+
+install
 
 
 

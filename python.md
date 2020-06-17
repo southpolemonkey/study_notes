@@ -183,3 +183,18 @@ action
 - help
 - extend
 
+## build and distrbute packages
+
+
+pypi public dataset
+- [mechanism linehaul](https://github.com/pypa/linehaul)
+- [Analyzing PyPI package downloads](https://packaging.python.org/guides/analyzing-pypi-package-downloads/)
+
+[pypi download dataset sample queries](https://gist.github.com/alex/4f100a9592b05e9b4d63)
+
+
+## Document build
+
+```bash
+pip install -U sphinx
+```

@@ -34,12 +34,6 @@ Protection includes following scenarios:
 
 https://stackoverflow.com/a/38866304/6716236
 
-### CI/CD
-
-- harbour
-- rancher
-- [how to build common database in pipeline yml?](https://confluence.atlassian.com/bitbucket/how-to-run-common-databases-in-bitbucket-pipelines-891130454.html
-)
 
 ### submodules
 Git submodules enables developer to link a third party repo to the current repo.
@@ -47,6 +41,14 @@ Git submodules enables developer to link a third party repo to the current repo.
 ### reading
 [implement git yourself](https://wyag.thb.lt/)
 [github doc](https://help.github.com/en/github/using-git/caching-your-github-password-in-git)
+
+
+# CI/CD
+
+- harbour
+- rancher
+- [how to build common database in pipeline yml?](https://confluence.atlassian.com/bitbucket/how-to-run-common-databases-in-bitbucket-pipelines-891130454.html
+)
 
 ### chatbot deployment solutions
 probot

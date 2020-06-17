@@ -8,6 +8,7 @@
 https://techgrabyte.com/11-automl-tools-automate-machine-learning/
 
 ## 对数据集的基本操作
+
 1. 把所有不是数值类型的column转化成转化成数值， 怎么做?
 2. 要做heatmap得保证输入的都是数值类型，要把`nan`转化成类似`-999`有特殊含义的
 
@@ -65,6 +66,13 @@ what skillsets a  good ds needs
 - Version controlling data and SQL
 - work with lots of JSON
 
+
 # productionize models
 
+## Model management
+
 [metaflow](https://metaflow.org/)
+
+data exploration in notebooks ---> convert to python script ----> experiments
+
+feature store
