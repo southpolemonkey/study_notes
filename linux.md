@@ -2,6 +2,8 @@
 
 - [vim](#vim)
 - [udemy course structure](#udemy)
+  - [file and directory permissions](#file-and-directory-permissions)
+  - [i/o, std Err](#i/o)
   - [packges, package manager](#packges,-package-manager)
   - [shell](#shell)
 - [Nix ecosystem](#nix-ecosystem)
@@ -208,11 +210,14 @@ weird symbols in bash
 # suppose run as superuser
 update-rc.d script_name defaults 
 
+# need a start script and put in /etc/init.d
 ```
+
+[reference](https://www.digitalocean.com/community/tutorials/how-to-configure-a-linux-service-to-start-automatically-after-a-crash-or-reboot-part-2-reference)
 
 ## udemy
 
-`$PATH`
+
 
 ## file and directory permissions
 

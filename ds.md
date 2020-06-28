@@ -76,3 +76,6 @@ what skillsets a  good ds needs
 data exploration in notebooks ---> convert to python script ----> experiments
 
 feature store
+
+[rescale data](https://stats.stackexchange.com/a/70807/289207)
+
