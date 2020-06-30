@@ -54,3 +54,10 @@ $ nix-store -r /nix/store/z3hhlxbckx4g3n9sw91nnvlkjvyw754p-myname.drv
 - runMain
 - test
 
+## Notes for essential-scala
+
+chap3 modelling data with traits
+
+- algebraic data types: sum type, product type
+- Working with data, the book mentions `structural recursion`, and three ways to implement (ploymorphism, pattern matching in the base trait, pattern matching in an external object). Review and do exercises.
+
