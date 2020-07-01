@@ -19,3 +19,7 @@ data array functions
 
 
 [google platform cost calculator](https://cloud.google.com/products/calculator/)
+
+## BigQuery
+
+[pre-defined roles](https://cloud.google.com/bigquery/docs/access-control#bigquery)

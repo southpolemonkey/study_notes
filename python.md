@@ -1,5 +1,10 @@
 # Python
 
+- [Core python](#1.-core-python)
+- [Web scrap](#2.-web-scrap)
+- [build and distribute packages](#Build-and-distrbute-packages)
+- [Document server](#document-server)
+
 # 1. Core Python
 
 ## How does `import` work
@@ -183,7 +188,7 @@ action
 - help
 - extend
 
-## build and distrbute packages
+## Build and distrbute packages
 
 
 pypi public dataset
@@ -193,7 +198,7 @@ pypi public dataset
 [pypi download dataset sample queries](https://gist.github.com/alex/4f100a9592b05e9b4d63)
 
 
-## Document build
+## Document Server
 
 ```bash
 pip install -U sphinx
