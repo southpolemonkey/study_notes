@@ -1,5 +1,11 @@
 # Career Plan
 
+- [Concepts](#concepts) 
+- [Resume improvements](#resume-improvements)
+- [Sideline](#sideline)
+
+## Concepts
+
 what is individual contributor
 
 > It means someone who contributes individually. Their main purpose is not management. The idea behind this is to recognize that there is a career path for people who have technical skills that doesn't go through the path of becoming a manager.
@@ -44,12 +50,12 @@ Previous projects:
 - Describe a previous analytics projects you’ve been involved in
 - What is the favourite project you’ve completed?
 
-## Some good sentences I can put in resume
+## Resume improvements
 
 1. Are constantly updating your knowledge, engaging with the wider community (e.g. conferences/MeetUps), and continuously learning.
+2. [tuan chris website](https://www.tuanchris.com/about)
 
-
-# sideline
+## Sideline
 
 [Job Outlook](https://www.joboutlook.gov.au/)
 
@@ -71,6 +77,8 @@ what is ecometrics?
 
 >Ecometrics is the quantitative analysis of economic, environmental, and societal systems based on the concurrent development of empirical theory, related by appropriate methods of inference in attempts to create more sustainable systems.
 
-[VAP](https://www.vanguardinvestments.com.au/retail/ret/investments/product.html#/fundDetail/etf/portId=8206/assetCode=equity/?overview)
+[VAP vanguard investments](https://www.vanguardinvestments.com.au/retail/ret/investments/product.html#/fundDetail/etf/portId=8206/assetCode=equity/?overview)
 
-[Real Estate Agent Licence](https://www.fairtrading.nsw.gov.au/housing-and-property/property-professionals/recent-law-reforms/real-estate-agents-licence)
+[Get a Real Estate Agent Licence](https://www.fairtrading.nsw.gov.au/housing-and-property/property-professionals/recent-law-reforms/real-estate-agents-licence)
+
+

@@ -2,6 +2,8 @@
 
 - [vim](#vim)
 - [udemy course structure](#udemy)
+  - [file and directory permissions](#file-and-directory-permissions)
+  - [i/o, std Err](#i/o)
   - [packges, package manager](#packges,-package-manager)
   - [shell](#shell)
 - [Nix ecosystem](#nix-ecosystem)
@@ -208,11 +210,14 @@ weird symbols in bash
 # suppose run as superuser
 update-rc.d script_name defaults 
 
+# need a start script and put in /etc/init.d
 ```
+
+[reference](https://www.digitalocean.com/community/tutorials/how-to-configure-a-linux-service-to-start-automatically-after-a-crash-or-reboot-part-2-reference)
 
 ## udemy
 
-`$PATH`
+
 
 ## file and directory permissions
 
@@ -268,20 +273,23 @@ find files
 
 ## i/o
 
-STDIN: 0
-STDOUT: 1
-STDERR: 2
+- STDIN: 0
+- STDOUT: 1
+- STDERR: 2
 
-```bash
-> redirect stdout to file
->> redirect to file, append
-< redirect input from a file to a command
-& used with redirection to signal that a file discriptor is used
-2>&1 combin stderr and stdout
-2>file redirect stderr to a file
->/dev/null redirect output to nowhere
 
-```
+|Symbol | Usage
+|---|---|
+|> |redirect stdout to file
+|>> |redirect to file, append
+|< |redirect input from a file to a command
+|& |used with redirection to signal that a file discriptor is used
+|2>&1 |combin stderr and stdout
+|2>file |redirect stderr to a file
+|>/dev/null |redirect output to nowhere
+
+
+## compare files
 
 - diff
 - sdiff
@@ -358,7 +366,7 @@ apt-cache show package
 dkpg install 
 
 
-# red hat distros
+# red hat distros(centos)
 yum seatch string
 yum info
 yum install [-y] package
@@ -379,7 +387,7 @@ nixOS
 - BIOS(basic input/output system)
   - bootables devices(hard drives, usb drives, dvd drives...)
 - boot loaders start operating system
-  - LILO (Linux Loader
+  - LILO (Linux Loader)
   - GRUB (Grand Unified Bootloader)
 - linux kernel
   - vmlinux
@@ -405,6 +413,8 @@ syslog
 - DHCP
 
 ```bash
+#commands
+
 ping
 
 ifconfig
@@ -425,9 +435,9 @@ telnet
 
 ```bash
 -e exists
--z trur if string is empty
--ne
--eq
+-z true if string is empty
+-ne not equal
+-eq equal
 
 if [ condition ] then ... fi
 
@@ -442,7 +452,6 @@ use last item of a command, use `!$`
 - NixOS: a distribution of linux operating system
 - Nix: a package manager
 - Nixpkgs: a git repo for all installable packages
-- 
 
 ```bash
 # basic command
