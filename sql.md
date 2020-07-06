@@ -6,6 +6,7 @@
     - [Array, JSON functions](#array-json-functions)
     - [Mathematics, Statistical functions](#mathematics-statistical-functions)
     - [Geographical functions](#geography-functions)
+    - [UDF](#udf)
 
 
 ## Count distinct in windows function
@@ -95,6 +96,12 @@ select unix_date(current_date()), unix_seconds(current_timestamp()), unix_millis
 
 ### Array Json Functions
 
+[Felipe Hoffa parse json object in bigquery](https://stackoverflow.com/a/34890340)
+
 ### Mathematics, Statistical functions
 
 ### Geographical functions
+
+### UDF
+
+[manage udf in bigquery via dbt macro](https://discourse.getdbt.com/t/using-dbt-to-manage-user-defined-functions/18/10?u=alex_unsw  )
