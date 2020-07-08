@@ -105,3 +105,20 @@ select unix_date(current_date()), unix_seconds(current_timestamp()), unix_millis
 ### UDF
 
 [manage udf in bigquery via dbt macro](https://discourse.getdbt.com/t/using-dbt-to-manage-user-defined-functions/18/10?u=alex_unsw  )
+
+### types of union in bigquery
+
+- union
+- union distinct
+- union all
+- intersect
+- except
+
+```sql
+-- returns the unique records which exist in both table a and b
+select a from table_a
+intersect distinct
+select a from table_b;
+
+
+```

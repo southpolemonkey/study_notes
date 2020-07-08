@@ -38,3 +38,9 @@ consumer flags
 -- from-beginin
 
 maven - kafka-client
+
+## Sample repos
+
+https://github.com/aseigneurin/kafka-tutorial-event-processing
+
+[predict-flight-arrivals-with-kafka](https://www.confluent.io/blog/predicting-flight-arrivals-with-the-apache-kafka-streams-api/)
