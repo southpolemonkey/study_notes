@@ -44,3 +44,8 @@ maven - kafka-client
 https://github.com/aseigneurin/kafka-tutorial-event-processing
 
 [predict-flight-arrivals-with-kafka](https://www.confluent.io/blog/predicting-flight-arrivals-with-the-apache-kafka-streams-api/)
+## advertised host setting
+
+change `advertisted.listen` in server.properties to access remote machine
+
+## kafka stream

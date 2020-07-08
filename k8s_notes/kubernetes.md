@@ -842,7 +842,8 @@ spec:
 # Reading List
 
 [lucassha-CKAD](https://github.com/lucassha/CKAD-resources)
-[k8s-tips-service-account](https://medium.com/better-programming/k8s-tips-using-a-serviceaccount-801c433d0023)
+[#k8s-tips-service-account](https://medium.com/better-programming/k8s-tips-using-a-serviceaccount-801c433d0023)
+[CKAD candidate book](https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad)
 
 # Common Errors
 
@@ -876,4 +877,5 @@ kk create --edit
 kubectl -n <namespace> exec -it <pods_name> -- /bin/bash
 
 ```
+
 
