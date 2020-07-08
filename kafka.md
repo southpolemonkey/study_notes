@@ -38,3 +38,9 @@ consumer flags
 -- from-beginin
 
 maven - kafka-client
+
+## advertised host setting
+
+change `advertisted.listen` in server.properties to access remote machine
+
+## kafka stream
