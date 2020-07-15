@@ -204,3 +204,8 @@ pypi public dataset
 pip install -U sphinx
 ```
 [docusaurus](https://docusaurus.io/en/)
+
+
+## type check
+
+[mypy quickstarts](https://mypy.readthedocs.io/en/stable/getting_started.html)
