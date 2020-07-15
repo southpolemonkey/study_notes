@@ -55,12 +55,22 @@ create topics before produce data to them.
 
 consumer flags -- group -- from-begining
 
-
 ## Kafka streams
+
+**Notes**: kafak stream v.2.4 introduced quite a few changes, I've experienced that when I dealt with 2.0.0. The changes include new test api, in which you can define `inputTestTopic` and `outputTestTopic`. Check out the blog [here](https://www.confluent.io/blog/test-kafka-streams-with-topologytestdriver/?_ga=2.171256416.1586641422.1594704641-736325823.1594094562).
+
+```java
+// after 2.4.0
+inputTopic = testDriver.createInputTopic(WordCountDemo.INPUT_TOPIC, new StringSerializer(), new StringSerializer());
+outputTopic = testDriver.createOutputTopic(WordCountDemo.OUTPUT_TOPIC, new StringDeserializer(), new LongDeserializer());
+```
 
 - [kafka-streams-course-code-repo](https://github.com/simplesteph/kafka-streams-course/tree/2.0.0)
 - [kafka-tutorials-repo](https://github.com/confluentinc/kafka-tutorials)
 - [find-max-min-in-stream-events](https://kafka-tutorials.confluent.io/create-stateful-aggregation-minmax/kstreams.html#consume-aggregated-results-from-the-output-topic)
+- [zorteran-kafka-streams](https://github.com/zorteran/wiadro-danych-kafka-streams)
+- [companion medium post](https://medium.com/@zorteran/calculating-speed-bearing-and-distance-using-kafka-streams-processor-api-9e95834b9e3d)
+- [simon albury - smart meters](https://github.com/southpolemonkey/stream-smarts)
 
 `application.id` important config for stream application, used as `Consumer.group.id = application.id`
 
@@ -70,7 +80,7 @@ some concepts:
 - streams
 - internal topics
 - Kstream vs KTable
-- **Log compacted topic
+- **(advanced)** Log compacted topic
 - MapValues vs Map
 - Filter vs FilterNot
 - FlatMapValues vs FlatMap (for kstream only)
