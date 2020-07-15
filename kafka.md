@@ -1,51 +1,128 @@
-# kafka
+# Kafka
 
-get some idea of volumn of data
-spotify 700K events per second, future 2M /sec
+- [Kafka Basics](#kafka-basics)
+- [Java Basics](#java-basics)
+  - [work with json](#work-with-json)
+- [Kafka Streams](#kafka-stream)
+- [FAQ](#faq)
 
+The notes covers various message systems, including kafak, pubsub, and also review some basic java knowledge.
 
 ## Reading
+get some idea of volumn of data: spotify 700K events per second, future 2M /sec
 
 [spotify migrate to pubsub](https://labs.spotify.com/2016/03/10/spotifys-event-delivery-the-road-to-the-cloud-part-iii/)
 
+## Kafka Basics
 
-## Basics
+To have launchd start kafka now and restart at login:
+`brew services start kafka`
 
-kafka installation
-
-> To have launchd start kafka now and restart at login:
-  brew services start kafka
 Or, if you don't want/need a background service you can just run:
-  zookeeper-server-start /usr/local/etc/kafka/zookeeper.properties & kafka-server-start /usr/local/etc/kafka/server.properties
-
-
+```bash
+zookeeper-server-start /usr/local/etc/kafka/zookeeper.properties
+kafka-server-start /usr/local/etc/kafka/server.properties
+```
+ 
 where does homebrew store kafka configurations: `/usr/local/etc/kafka`
 
 zookeeper default port `2181`
 
-kafka default port
+kafka broker default port `9092`
 
-broker default port `9092`
+change `advertisted.listen` in server.properties to access remote machine
+
+## Useful commands
+
+```bash
+kafka-topics --create --zookeeper 127.0.0.1:2181 --replication-factor 1 --partitions 1 --topic <topic_name>
+kafka-topics --list --bootstrap-server PLAINTEXT://127.0.0.1:9092
+```
+
+## Java basics
+
+```bash
+mvn clean package
+java -jar <path_to_jar>
+```
+### Work with json
+
+[Jackson databind](http://tutorials.jenkov.com/java-json/jackson-objectmapper.html)
 
 ## Best practice
 
 create topics before produce data to them.
 
-consumer flags
+consumer flags -- group -- from-begining
 
--- group
 
--- from-beginin
+## Kafka streams
 
-maven - kafka-client
+- [kafka-streams-course-code-repo](https://github.com/simplesteph/kafka-streams-course/tree/2.0.0)
+- [kafka-tutorials-repo](https://github.com/confluentinc/kafka-tutorials)
+- [find-max-min-in-stream-events](https://kafka-tutorials.confluent.io/create-stateful-aggregation-minmax/kstreams.html#consume-aggregated-results-from-the-output-topic)
 
-## Sample repos
+`application.id` important config for stream application, used as `Consumer.group.id = application.id`
 
-https://github.com/aseigneurin/kafka-tutorial-event-processing
+some concepts:
 
-[predict-flight-arrivals-with-kafka](https://www.confluent.io/blog/predicting-flight-arrivals-with-the-apache-kafka-streams-api/)
-## advertised host setting
+- topology
+- streams
+- internal topics
+- Kstream vs KTable
+- **Log compacted topic
+- MapValues vs Map
+- Filter vs FilterNot
+- FlatMapValues vs FlatMap (for kstream only)
+- Map, FlatMap, SelectKey will trigger **re-partition**
+- branch (work like case statement)
+- selectKey (assigns a new key)
+- read from kafka `build.stream(topic_name)`
+- write to kafka `build.to(topic_name)` or `build.through(topic_name)`
+- transform between kstream and ktable
 
-change `advertisted.listen` in server.properties to access remote machine
+more operations:
 
-## kafka stream
+- ktable: count, reduce, aggregate
+- kstream: peek, Transform, TransformValues
+- KStream ----> KGroupedStream
+
+What is *Exactly-One semantics*?
+
+Join:
+- GlobalKTable, a reasonbly smaller table, think of it works as a reference table
+ 
+
+## FAQ
+
+[Is key requireed for kafka message?](https://stackoverflow.com/questions/29511521/is-key-required-as-part-of-sending-messages-to-kafka/61912094#61912094)
+
+## Annex
+
+### kafka producer config options
+
+```text
+[main] INFO org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = all
+	batch.size = 32768
+	bootstrap.servers = [127.0.0.1:9092]     # broker address
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+    value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = snappy
+	connections.max.idle.ms = 540000
+	enable.idempotence = true
+	interceptor.classes = []
+	linger.ms = 20
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+    ...
+```
+
