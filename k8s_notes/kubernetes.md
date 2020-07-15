@@ -1,6 +1,7 @@
 # Kubernetes
 
 # 0. Terminology
+
 - container runtime
 - kubelet
 
@@ -8,6 +9,7 @@
 # 1. Docker Basics
 
 Steps
+
 - create docker image
 - docker build -t quickstart-image .
 - docker tag quickstart-image gcr.io/[PROJECT-ID]/quickstart-image:tag1
@@ -42,10 +44,12 @@ docker network disconnect -f <network_name> <container_name>
 # 2. Core Concepts
 
 Goals:
+
 - Understand Kubernetes API primitives
 - Create and configure basic Pods
 
 Components
+
 - api server
 - etcd
 - scheduler
@@ -141,10 +145,10 @@ kubectl scale deployment/webapp --replicas=3
 
 ```
 
-
 # 2.2 Configuration
 
 Goals:
+
 - Understand ConfigMaps
 - Understand SecurityContexts
 - Define an application's resources requirements
@@ -152,6 +156,7 @@ Goals:
 - Understand ServiceAccounts
 
 patterns:
+
 - define command and arguments for a container
 - define environment variable
 - expose pod information via env_var
@@ -196,6 +201,7 @@ kubectl create secret generic db-secret --from-literal=DB_Host=sql01 --from-lite
 ```
 
 secret type
+
 - service account
 - secret
 - Opaque
@@ -338,6 +344,7 @@ what is the relationship between GSA and KSA?
 # 2.3 multi-container pods
 
 Goals:
+
 - Understand Multi-Container Pod design patterns
 
 ## 2.3.1 taint, toleration
@@ -361,6 +368,7 @@ kubectl taint nodes node01 spray=mortein:NoSchedule
 ## 2.3.3 Common patterns 
 
 Patterns:
+
 - sidecar
 - adapter
 - ambassador
@@ -404,6 +412,7 @@ spec:
 # 2.4 Observability
 
 Goals:
+
 - Understand LivenessProbes and ReadinessProbes
 - Understand container logging
 - Understand how to monitor applications
@@ -414,6 +423,7 @@ Goals:
 [Pod Liftcycle](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/)
 
 Container probes
+
 - livenessProbe
 - readinessProbe
 - startupProbe
@@ -436,6 +446,7 @@ logging architecture
 You should remember that native kubernetes does not support extensive logging mechanism. The managed service like GKE, EKS makes life easier at some cost.
 
 logging agent options:
+
 - stackdriver monitoring
 - elastic search
 
@@ -501,6 +512,7 @@ spec:
 ## 2.5.2 Rolling updates
 
 strategy type:
+
 - RollingUpdate
   - 25% max unavailable, 25$ max surge
   - Recreate
@@ -522,6 +534,7 @@ kubectl exec --namespace=<ns> curl -- sh -c '<doing something>'
 job is basically a task to achieve certian goals. You can set `backoffLimit` which tells it to retry up to how many times until the goal is achieved.
 
 what kind of tasks are suitable to run as job:
+
 - non-parallel job
 - parallel jobs with a work queue
 - parallel jobs with a fixed completion count
@@ -586,16 +599,19 @@ Services basically give pod a static address so that another pods can work upon 
 Multi-Port Services
 
 Discovering Services
+
 - Env variables
 - DNS (preferred)
 
 Publishing Services
+
 - ClusterIP
 - NodePort
 - LoadBalancer
 - ExternalName
 
 Supported protocols
+
 - TCP
 - UDP
 - HTTP
@@ -630,6 +646,7 @@ kubectl expose deployment -n ingress-space ingress-controller --type=NodePort --
 ## 2.6.2 Network Policies
 
 ingress type:
+
 - Single Service Ingress
 - Simple fanout
 - Name based virtual hosting
@@ -723,6 +740,7 @@ Events:
   Normal  UPDATE  6m20s  nginx-ingress-controller  Ingress app-space/ingress-wear-watch
   
 ```
+
 # 2.7 State Persistence
 
 Goal: Understand PersistentVolumeClaims for storage
@@ -730,6 +748,7 @@ Goal: Understand PersistentVolumeClaims for storage
 [doc link](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims)
 
 Concepts:
+
 - Reclaim Policy
 - Access Mode
 
@@ -804,6 +823,7 @@ spec:
 ```
 
 # 2.8 Optional topics
+
 - static provisioning
 - dynamic provisioning
 - Stateful sets
@@ -877,5 +897,3 @@ kk create --edit
 kubectl -n <namespace> exec -it <pods_name> -- /bin/bash
 
 ```
-
-
