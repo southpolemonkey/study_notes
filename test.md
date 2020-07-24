@@ -1,16 +1,35 @@
 # Test
 
-- [Pytest](#pytest)
 
-```text
+
 It's always good to know the core concepts of any programming language. But for QA you need to be very productive using python to automate tests faster. This means the you should master the following.
 
-Built-in functions - The more you know the less it will take for you to code
-unittest module - Get to know in and out of this to write automation test suites
-Regular expressions - Given that testing is all about assertions, expertise with regular expressions will go a long way to write tests quickly
-Classes and Objects - Test code should be of high standards like the feature ones. So when you write tests, use OOP most of the times
-HTTP libraries - useful for testing REST APIs
+- Built-in functions - The more you know the less it will take for you to code
+- unittest module - Get to know in and out of this to write automation test suites
+- Regular expressions - Given that testing is all about assertions, expertise with regular expressions will go a long way to write tests quickly
+- Classes and Objects - Test code should be of high standards like the feature ones. So when you write tests, use OOP most of the times
+- HTTP libraries - useful for testing REST APIs
 Data types - lists, tuples, dictionaries, if you know the collections module, then that would be a huge plus where you can get complicated text processing stuff done with very few lines of code
+
+
+## Concept
+
+What is test fixture?
+> A test fixture represents the preparation needed to perform one or more tests, and any associated cleanup actions. This may involve, for example, creating temporary or proxy databases, directories, or starting a server process.
+
+## unittest
+
+```python
+# template
+import unittest
+
+class TestClass(unittest.TestCase):
+
+# define each test case
+
+if __name__ == '__main__':
+    unittest.main()
+
 ```
 
 ## Pytest

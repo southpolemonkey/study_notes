@@ -5,6 +5,8 @@
   - [work with json](#work-with-json)
 - [Kafka Streams](#kafka-stream)
 - [FAQ](#faq)
+- [KSQL](#ksql)
+- [Monitoring](#monitoring)
 
 The notes covers various message systems, including kafak, pubsub, and also review some basic java knowledge.
 
@@ -136,3 +138,7 @@ Join:
     ...
 ```
 
+## KSQL 
+
+
+## Monitoring

@@ -81,6 +81,9 @@ kubectl get replicationcontroller
 kubectl get pods -l environment=production,tier=frontend # equality-based
 kubectl get pods -l 'environment in (production),tier in (frontend)' # set-based
 kubectl get pod --sort-by=.metadata.creationTimestamp -n dbt-tactical-ds -o name
+
+
+ kubectl run hazelcast --image=hazelcast/hazelcast --labels="app=hazelcast,env=prod"
 ```
 
 ## 2.1.2 ReplicaSet
@@ -869,7 +872,6 @@ spec:
 
 ReplicaSet
 >The ReplicaSet "replicaset-2" is invalid: spec.template.metadata.labels: Invalid value: map[string]string{"tier":"nginx"}: `selector` does not match template `labels`
-
 
 Errors occuring during the provising of pods
 - ImagePullBackOff
