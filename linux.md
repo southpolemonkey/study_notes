@@ -85,6 +85,9 @@ zcat
 
 tar zcf filename.tgz
 tar ztv
+# create an extract
+tar -czvf name-of-archive.tar.gz /path/to/directory-or-file
+
 # sort
 sort -h  # sort by size
 sort -V  # sort by version number

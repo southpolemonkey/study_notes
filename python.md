@@ -7,6 +7,14 @@
 
 # 1. Core Python
 
+file handling mode
+
+- r
+- w[+]
+- a[+]
+- x (create a new, fail if file exists)
+- b (opens in binary mode)
+
 ## How does `import` work
 
 Regular package vs Namespaces package 

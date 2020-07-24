@@ -60,6 +60,7 @@ JsonParser  parser  = factory.createParser(JsonString);
  * 
  * - what's the difference between run code with java <app_name> and mvn exec <app_namme>?
  * - Can I run multiple main class?
+ * - How to use maven plugins?
  */
 
 System.out.println("Maven");
