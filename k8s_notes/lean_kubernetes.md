@@ -31,11 +31,19 @@ kubectl config use-context my-cluster-name
 ## exam questions 
 
 - confused with the correct api version.
+     - pod: v1
+     - deployment: apps/v1
 - confused about the difference between yaml file for deployment and pod
+     - use `explain`
 - update a pod rolling update strategy (at container level? or pod level? path under spec is not clear), update images, roll back
+     - strategy is defined at deployment level, same level as container in path 
+     - set image <deployment_name> <image_name>
+     - rollout undo <deployment_name>
 - create config map or secert and consume from a path in container
 - ambassordor pattern, exposed port the service connect to can change
 - declare cpu/memory usage for pod/container (confused with what are defined at which level)
+     - resources are requested per container (same level as image under container path)
+     - add resources limits 
 - sidecar pattern(pipe log to file), sidecar container read from logfile and pipe into new file in json format
 - consume service account in pod/deployment? 
 - use environment variables in pod or deployment? 
@@ -44,3 +52,25 @@ kubectl config use-context my-cluster-name
 - [liveness http request](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/#define-a-liveness-http-request), with two endpoints mentioned, one is for actual serving, `/healthz` is for detecting responsive or not.
      - liveness probe: container restart if failed
      - readiness probe: 
+- pod affinity
+- use json path to query status of resources and output to specific path
+     - `kubectl apply -f https://k8s.io/examples/controllers/fluentd-daemonset.yaml --dry-run=client -o go-template='{{.spec.updateStrategy.type}}{{"\n"}}'`
+
+
+
+```yaml
+# companion yaml examples
+
+# declare resources for containers
+containers:
+  - image: <image_name>
+    name: <container_name>
+    resources:
+      requests:
+        cpu: "500m"
+        memory: "128Mi"
+      limits:
+        cpu: "1000m"
+        memory: "256Mi"
+
+```
