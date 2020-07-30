@@ -7,7 +7,7 @@
   - [packges, package manager](#packges,-package-manager)
   - [shell](#shell)
 - [Nix ecosystem](#nix-ecosystem)
-- [Shadsocks](#shadowsocks)
+- [Shadowsocks](#shadowsocks)
 
 ## commands
 
@@ -219,8 +219,6 @@ update-rc.d script_name defaults
 [reference](https://www.digitalocean.com/community/tutorials/how-to-configure-a-linux-service-to-start-automatically-after-a-crash-or-reboot-part-2-reference)
 
 ## udemy
-
-
 
 ## file and directory permissions
 
@@ -455,6 +453,7 @@ use last item of a command, use `!$`
 - NixOS: a distribution of linux operating system
 - Nix: a package manager
 - Nixpkgs: a git repo for all installable packages
+- [Leigh Perry nix repo](https://github.com/leigh-perry/nix-setup)
 
 ```bash
 # basic command

@@ -2,8 +2,11 @@
 
 ## Arvo
 
+data formated used in kafka schema registry. It's very similar to json but with schema and typed defined.
+
 ## Parquet
-https://parquet.apache.org/documentation/latest/
+
+[parquet official doc](https://parquet.apache.org/documentation/latest/), is a column store
 
 ## Apache Arrow
 

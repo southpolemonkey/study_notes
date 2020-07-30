@@ -20,13 +20,13 @@ https://www.cloudflare.com/learning/ssl/transport-layer-security-tls/
 
 ## Linux command
 
-nslookup
-ifconfig
-traceroute
-iptables
-netstat
-dig
-curl
+- nslookup
+- ifconfig
+- traceroute
+- iptables
+- netstat
+- dig
+- curl
 
 [linux-networking-commands](https://mindmajix.com/linux-networking-commands-best-examples)
 
