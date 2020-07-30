@@ -5,11 +5,16 @@
   - [JSON](#json)
   - [String formatting](#string-formatting)
   - [argparse](#argparse)
+  - [Regex](#regex)
   - [Logging](#logging)
   - [OOP](#oop)
+  - [Error handling](#error-handling)
+  - [Misc](#misc)
+  - [Advanced python](#advanced-python)
 - [2. Web scrap](#2.-web-scrap)
-- [3. build and distribute packages](#Build-and-distrbute-packages)
-- [4. Document server](#document-server)
+- [3. build and distribute packages](#3.-Build-and-distrbute-packages)
+- [4. Document server](#4.-document-server)
+- [5. Development tool](#5.-development-tool)
 
 # 1. Core Python
 
@@ -51,141 +56,7 @@ tell()
 - Binary I/O
 - Raw I/O
 
-## JSON
-
-```python
-# serializing: convert json to string
-# deserializing: parse string to json object
-
-dict = {"key":"value"}
-json_string = json.dumps(dict)
-json_object = json.loads(json_string)
-
-# serialize and deserialise file object
-f = open("file_contains_json", "r")
-json_object = json.load(f)
-json.dump(json_object, a_new_file_object)
-
-```
-
-## How does `import` work
-
-Regular package vs Namespaces package 
-
-### How to import from module from parent package?
-
-```python
-import os,sys
-
-sys.path.append(os.path.join(os.path.dirname(__file__), os.pardir, 'src')
-from <parent module> import <module name>
-```
-
-## What is `future` module
-
-`zip`, `map`, `filter`, `lambda` function使用
-
-```python
-# Uppercase first letter
-import re
-def titlecase(s):
-    return re.sub(r"[A-Za-z]+('[A-Za-z]+)?",
-                  lambda mo: mo.group(0).capitalize(),
-                  s)
-
-titlecase("they're bill's friends.")
-```
-
-### regex
-
-not something: `!`
-
-```python
-
-# extract pattern from string
-m = re.search(pat, text)
-if m:
-    found = m.group(1)
-
-# alternative
-try:
-    found = re.search(pat, text).group(1)
-except AttributeError:
-    # AAA, ZZZ not found in the original string
-    found = '' # apply your error handling
-```
-
-## Logging
-
-Concepts
-
-- logging
-- logging config
-- logging handler
-  - StreamHandler
-  - FileHandler
-
-```python
-# wrapper for instanitate a logger object
-def get_logger(name, file_path):
-    ''' Create a new Logger Object '''
-    logger = logging.getLogger(name)
-    log_format = '%(asctime)s | %(message)s'
-    formatter = logging.Formatter(log_format, datefmt='%m/%d %I:%M:%S %p')
-
-    file_handler   = logging.FileHandler(file_path)
-    file_handler.setFormatter(formatter)
-    stream_handler = logging.StreamHandler()
-    stream_handler.setFormatter(formatter)
-
-    logger.addHandler(file_handler)
-    logger.addHandler(stream_handler)
-
-    return logger
-
-def set_logger_level(logger, level):
-    ''' Set Logger Logging Level '''
-    logger.setLevel(level)
-    return logger
-```
-
-## ArgParse
-
-```python
-import argparse
-parser = argparse.ArgumentParser()
-# mandatory arguments
-# dest specify a variable holds the argv
-parser.add_argument("square", dest='square', type=int, help="display a square of a given number")
-# optional arguments
-parser.add_argument("-v", "--verbose", action="store_true", help="increase output verbosity")
-args = parser.parse_args()
-
-square = args.square
-```
-
-```python
-parser = argparse.ArgumentParser()
-
-parser.add_argument()
-
-args = parser.parser_args()
-```
-
-### what is `positional argument`
-
-action
-- store
-- store_const
-- store_true
-- append
-- append_const
-- count
-- version
-- help
-- extend
-
-## List files in directory
+### List files in directory
 
 ```python
 # use glob
@@ -208,33 +79,129 @@ max_file_name = max([len(file) for file in os.listdir()])+5
 for file in os.listdir():
     file_size = os.path.getsize(file)/1024
     print(f'{file:<{max_file_name}}: {file_size:.2f} KB')
-
 ```
+---
 
-## List memory usuage for local variables
+## JSON
 
 ```python
-def sizeof_fmt(num, suffix='B'):
-    ''' by Fred Cirera,  https://stackoverflow.com/a/1094933/1870254, modified'''
-    for unit in ['','Ki','Mi','Gi','Ti','Pi','Ei','Zi']:
-        if abs(num) < 1024.0:
-            return "%3.1f %s%s" % (num, unit, suffix)
-        num /= 1024.0
-    return "%.1f %s%s" % (num, 'Yi', suffix)
+# serializing: convert json to string
+# deserializing: parse string to json object
 
-for name, size in sorted(((name, sys.getsizeof(value)) for name, value in locals().items()),
-                         key= lambda x: -x[1])[:10]:
-    print("{:>30}: {:>8}".format(name, sizeof_fmt(size)))
+dict = {"key":"value"}
+json_string = json.dumps(dict)
+json_object = json.loads(json_string)
+
+# serialize and deserialise file object
+f = open("file_contains_json", "r")
+json_object = json.load(f)
+json.dump(json_object, a_new_file_object)
+
 ```
 
-## List file size in folder
+---
 
-## subprocess
+## Regex
+
+
+```python
+# not something: `!`
+# extract pattern from string
+m = re.search(pat, text)
+if m:
+    found = m.group(1)
+
+# alternative
+try:
+    found = re.search(pat, text).group(1)
+except AttributeError:
+    # AAA, ZZZ not found in the original string
+    found = '' # apply your error handling
+```
+
+---
+
+## Logging
+
+Concepts
+
+- logging
+- logging config
+  - config
+  - .ini
+- logging handler
+  - StreamHandler
+  - FileHandler
+- centralised logger in application
+
+> Best practice when instantiating loggers in a library is to only create them using the __name__ global variable: the logging module creates a hierarchy of loggers using dot notation, so using __name__ ensures no name collisions.
+
+
+```python
+# https://docs.python-guide.org/writing/logging/
+# wrapper for instanitate a logger object
+
+def get_logger(name, file_path):
+    ''' Create a new Logger Object '''
+    logger = logging.getLogger(name)
+    log_format = '%(asctime)s | %(message)s'
+    formatter = logging.Formatter(log_format, datefmt='%m/%d %I:%M:%S %p')
+
+    file_handler   = logging.FileHandler(file_path)
+    file_handler.setFormatter(formatter)
+    stream_handler = logging.StreamHandler()
+    stream_handler.setFormatter(formatter)
+
+    logger.addHandler(file_handler)
+    logger.addHandler(stream_handler)
+
+    return logger
+
+def set_logger_level(logger, level):
+    ''' Set Logger Logging Level '''
+    logger.setLevel(level)
+    return logger
+```
+
+---
+
+## ArgParse
+
+Concepts
+
+- positional argument
+- args & kwargs
+
+```python
+import argparse
+parser = argparse.ArgumentParser()
+# mandatory arguments
+# dest specify a variable holds the argv
+parser.add_argument("square", dest='square', type=int, help="display a square of a given number")
+# optional arguments
+parser.add_argument("-v", "--verbose", action="store_true", help="increase output verbosity")
+args = parser.parse_args()
+
+square = args.square
+```
+
+
+action
+- store
+- store_const
+- store_true
+- append
+- append_const
+- count
+- version
+- help
+- extend
+
 
 ## String formatting
 
 ```python
-http://zetcode.com/python/fstring/
+# http://zetcode.com/python/fstring/
 
 # formatting options
 # debug in f string
@@ -278,17 +245,11 @@ print(f"{a:o}")
 print(f"{a:e}")
 ```
 
-### logging module
-> Best practice when instantiating loggers in a library is to only create them using the __name__ global variable: the logging module creates a hierarchy of loggers using dot notation, so using __name__ ensures no name collisions.
-
-https://docs.python-guide.org/writing/logging/
-
-three ways to manage logging config file
-- ini 
-- via dictionaty
-- via code
+---
 
 ## OOP
+
+Concepts
 
 - what is static method?
 - what is class method? what is factory method?
@@ -334,14 +295,88 @@ getting value of x
 1 1
 ```
 
+---
+
+## Error handling
+
+```python
+# https://docs.python.org/3/tutorial/errors.html#errors-and-exceptions
+
+# Syntax Errors
+# Exception
+# try...catch...finally 
+# User-defined exception
+
+class Error(Exception):
+    """Base class for exceptions in this module."""
+    pass
+
+# define more custom exception
+```
+
+---
+## Misc
+
+### How does `import` work
+
+Regular package vs Namespaces package 
+
+#### How to import from module from parent package?
+
+```python
+import os,sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), os.pardir, 'src')
+from <parent module> import <module name>
+```
+
+### What is `future` module
+
+
+```python
+# Uppercase first letter
+import re
+def titlecase(s):
+    return re.sub(r"[A-Za-z]+('[A-Za-z]+)?",
+                  lambda mo: mo.group(0).capitalize(),
+                  s)
+
+titlecase("they're bill's friends.")
+```
+
+## List memory usuage for local variables
+
+```python
+# ttps://stackoverflow.com/a/1094933/1870254
+def sizeof_fmt(num, suffix='B'):
+    for unit in ['','Ki','Mi','Gi','Ti','Pi','Ei','Zi']:
+        if abs(num) < 1024.0:
+            return "%3.1f %s%s" % (num, unit, suffix)
+        num /= 1024.0
+    return "%.1f %s%s" % (num, 'Yi', suffix)
+
+for name, size in sorted(((name, sys.getsizeof(value)) for name, value in locals().items()), key= lambda x: -x[1])[:10]:
+    print("{:>30}: {:>8}".format(name, sizeof_fmt(size)))
+```
+
+---
+
+## Advanced python
+
+Concepts
+
+- iterator, generator
+- collections
+
+
 # 2. Web Scrap
 
-https://www.geeksforgeeks.org/download-instagram-profile-pic-using-python/
+Concepts
 
-### debug 
-step over
-step in
-step out
+- request
+- parse html
+
+https://www.geeksforgeeks.org/download-instagram-profile-pic-using-python/
 
 
 # 3. Build and distrbute packages
@@ -356,12 +391,26 @@ pypi public dataset
 
 # 4. Document Server
 
-```bash
-pip install -U sphinx
-```
-[docusaurus](https://docusaurus.io/en/)
+Concept
+
+- generate document from comments 
+- solutons
+  - sphinx
+  - meta
+  - [docusaurus](https://docusaurus.io/en/)
 
 
-## type check
+# 5. Development tool
 
-[mypy quickstarts](https://mypy.readthedocs.io/en/stable/getting_started.html)
+Concepts
+
+- type check
+  - [mypy quickstarts](https://mypy.readthedocs.io/en/stable/getting_started.html)
+- linter
+  - black
+  - flake8
+- performance benchmark
+- [test and debug](test.md)
+
+
+
