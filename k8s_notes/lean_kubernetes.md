@@ -37,6 +37,7 @@ kubectl config use-context my-cluster-name
 - create config map or secert and consume from a path in container
 - ambassordor pattern, exposed port the service connect to can change
 - declare cpu/memory usage for pod/container (confused with what are defined at which level)
+  - requests vs limits
 - sidecar pattern(pipe log to file), sidecar container read from logfile and pipe into new file in json format
   - pod with multiple containers 
 - consume service account in pod/deployment? 
@@ -46,12 +47,16 @@ kubectl config use-context my-cluster-name
   - create pod with initial container
 - define cronjob, make sure the job complete at least once
 - [liveness http request](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/#define-a-liveness-http-request), with two endpoints mentioned, one is for actual serving, `/healthz` is for detecting responsive or not.
-     - liveness probe: container restart if failed
-     - readiness probe: 
-- query pod spec using jsonpath 
-     - `kubectl get pod nginx -o=jsonpath='{.spec.imagePullSecrets[0].name}{"\n"}'`
+  - liveness probe: container restart if failed
+  - readiness probe: 
+- query pod spec using jsonpath and save resulst to specfic path
+  - `kubectl get pod nginx -o=jsonpath='{.spec.imagePullSecrets[0].name}{"\n"}'`
 - exec into pod/container?
-     - `kubectl exec -it init-demo -- /bin/bash`
+  - `kubectl exec -it init-demo -- /bin/bash`
+- affinity
+  - node affinity
+  - pod affinity
+  - operator supports (In, NotIn, Exists, DoesNotExist, Gt, Lt)
 
 
 ```yaml
