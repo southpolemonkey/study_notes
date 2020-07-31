@@ -10,7 +10,8 @@
   - [OOP](#oop)
   - [Error handling](#error-handling)
   - [Misc](#misc)
-  - [Advanced python](#advanced-python)
+  - [itertools, collectiions, functools](#itertools,-collectiions,-functools)
+  - [Package, Module](#package,-module)
 - [2. Web scrap](#2.-web-scrap)
 - [3. build and distribute packages](#3.-Build-and-distrbute-packages)
 - [4. Document server](#4.-document-server)
@@ -55,6 +56,7 @@ tell()
 - Text I/O
 - Binary I/O
 - Raw I/O
+- StringIO
 
 ### List files in directory
 
@@ -170,7 +172,9 @@ def set_logger_level(logger, level):
 Concepts
 
 - positional argument
+- keyword argument
 - args & kwargs
+- unpack operator(`*`, `**`)
 
 ```python
 import argparse
@@ -183,6 +187,11 @@ parser.add_argument("-v", "--verbose", action="store_true", help="increase outpu
 args = parser.parse_args()
 
 square = args.square
+
+# when to use positional args vs kwards
+# https://docs.python.org/3/tutorial/controlflow.html#recap
+def f(pos1, pos2, /, pos_or_kwd, *, kwd1, kwd2):
+
 ```
 
 
@@ -299,6 +308,12 @@ getting value of x
 
 ## Error handling
 
+Concepts
+
+- Error
+- Exception
+- Warning
+
 ```python
 # https://docs.python.org/3/tutorial/errors.html#errors-and-exceptions
 
@@ -312,23 +327,13 @@ class Error(Exception):
     pass
 
 # define more custom exception
+
+# exception hierarchy
+# https://docs.python.org/3/library/exceptions.html#exception-hierarchy
 ```
 
 ---
 ## Misc
-
-### How does `import` work
-
-Regular package vs Namespaces package 
-
-#### How to import from module from parent package?
-
-```python
-import os,sys
-
-sys.path.append(os.path.join(os.path.dirname(__file__), os.pardir, 'src')
-from <parent module> import <module name>
-```
 
 ### What is `future` module
 
@@ -337,9 +342,7 @@ from <parent module> import <module name>
 # Uppercase first letter
 import re
 def titlecase(s):
-    return re.sub(r"[A-Za-z]+('[A-Za-z]+)?",
-                  lambda mo: mo.group(0).capitalize(),
-                  s)
+    return re.sub(r"[A-Za-z]+('[A-Za-z]+)?",lambda mo: mo.group(0).capitalize(), s)
 
 titlecase("they're bill's friends.")
 ```
@@ -357,17 +360,53 @@ def sizeof_fmt(num, suffix='B'):
 
 for name, size in sorted(((name, sys.getsizeof(value)) for name, value in locals().items()), key= lambda x: -x[1])[:10]:
     print("{:>30}: {:>8}".format(name, sizeof_fmt(size)))
+
+# get variable's reference count  
+sys.getrefcount(var)
+
+# garbage collection
+gc.collect()
 ```
+
 
 ---
 
-## Advanced python
+## itertools, collectiions, functools
 
 Concepts
 
-- iterator, generator
+- iterator
+- generator
 - collections
+- [coroutines](http://www.dabeaz.com/coroutines/)
 
+```python
+# iterators
+# - combinations
+# - combinations_with_replacement
+# - permutations
+
+# exercises
+# - calculate moving average of a list
+# - calculate moving sum of a list
+# - flatten a multi-dimensional list
+```
+
+## Package, Module
+
+Concepts
+
+- How does python find package/module?
+- what is `sys.path`
+- [what is package](https://docs.python.org/3/tutorial/modules.html#packages) : a collection of modules
+- Intra-package References¶
+- Regular package vs Namespace package
+
+```python
+# How to import method from parent module?
+sys.path.append(os.path.join(os.path.dirname(__file__), os.pardir, 'src')
+from <parent module> import <module name>
+```
 
 # 2. Web Scrap
 
@@ -388,16 +427,27 @@ pypi public dataset
 
 [pypi download dataset sample queries](https://gist.github.com/alex/4f100a9592b05e9b4d63)
 
+[real-python-publish-package](https://realpython.com/pypi-publish-python-package/#publishing-to-pypi)
+
 
 # 4. Document Server
 
 Concept
 
+- doc string
+- what is function annotation
 - generate document from comments 
 - solutons
   - sphinx
   - meta
   - [docusaurus](https://docusaurus.io/en/)
+
+```python
+# function annotation
+# declare argument types and returned type
+def f(ham: str, eggs: str = 'eggs') -> str:
+
+```
 
 
 # 5. Development tool
@@ -406,11 +456,12 @@ Concepts
 
 - type check
   - [mypy quickstarts](https://mypy.readthedocs.io/en/stable/getting_started.html)
-- linter
+- formatter
   - black
+- linter
   - flake8
 - performance benchmark
-- [test and debug](test.md)
+- [Test and debug](test.md)
 
 
 
