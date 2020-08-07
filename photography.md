@@ -1,6 +1,7 @@
 # photography
 
 Photography type:
+
 - portrait
  - engagament session
  - maternity session
@@ -18,6 +19,7 @@ Photography type:
 - time-lapse
 
 Term
+
 - exposure compensation
 - composition
 - postive space, negative space
@@ -41,6 +43,7 @@ rerference paramaters setting for shooting waterfall
 - dawn at camp cove: iso100, 24mm, f7.1, 79' exposure (apply ND filter)
 
 landscape photography equipments
+
 - ND, gradient ND filter
 - cpl
 - LEE filter
@@ -56,6 +59,7 @@ tips for choosing used cameras
 [centential park birding watching](https://www.centennialparklands.com.au/visit/things-to-see-and-do/birdwatching/bird-spotting-challenge)
 
 bird species:
+
 - major mitchell cockatoo
 - sulpher-crested Cockatoo
 - rainbow lorikeet

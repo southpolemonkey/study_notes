@@ -1,4 +1,32 @@
-# Pandas 
+# PyData
+
+- Pandas
+  - basic types
+  - [performance enhancement](#performance-enhancement)
+  - [time series data](#time-series-data)
+- [NumPy](#numpy)
+- [Matplotlib](#matplotlib)
+
+# Pandas
+
+## Basic types
+
+main objects existed in pandas
+
+- Series
+- DataFrame
+- Index
+  - RangeIndex
+  - MultiIndex
+  - DatetimeIndex
+  - TimedeltaIndex
+  - PeriodIndex
+- GroupBy
+- Resampler
+- Window
+  - Rolling
+  - Expanding
+  - ExponentialMovingWindow 
 
 ## Metadata check
 
@@ -14,9 +42,6 @@ ts.memory_usage(deep=True)
 
 - Convert low cardinality column to `Categorical`
 
-```python
-cpython
-```
 
 ## Accumulative calculation, Moving average etc
 
@@ -59,16 +84,19 @@ how to specify date format when converting str to datetime/date?
 
 ### How to generate a sequence of date?
 ```python
-_pd.date_range(20200101, period='D', frequency=1)_
+pd.date_range(20200101, period='D', frequency=1)
 ```
 
 ### Understand `transform`
+
 https://pbpython.com/pandas_transform.html
 
 ### Subset dataframe by value counts
 
 ```python
-df_ysd.groupby(['Entity Group ID']).filter(lambda x: x['Entity Group ID'].size >= 6 ).sort_values(by=['Entity Group ID','Assessor Date Checked'], ascending=False)
+df_ysd.groupby(['field'])
+      .filter(lambda x: x['field'].size >= 6 )
+      .sort_values(by=['field1','field2'], ascending=False)
 ```
 
 1. Select out columns with pattern: `df.filter(like="pattern")`
@@ -80,7 +108,7 @@ df_ysd.groupby(['Entity Group ID']).filter(lambda x: x['Entity Group ID'].size >
 From <https://stackoverflow.com/questions/26988041/pandas-dataframe-row-wise-comparison> 
 7. Remove Nanhttps://stackoverflow.com/a/45695390/6716236
 
-## Is pandas thread safe
+## Is pandas thread safe?
 
 https://stackoverflow.com/a/55382886/6716236
 
@@ -89,10 +117,11 @@ https://stackoverflow.com/a/55382886/6716236
 
 - cython
 - numba
+- [scalable dataframe compiler](https://intelpython.github.io/sdc-doc/latest/overview.html)
 
 ## shuffle dataframe
 
-df.sample(frac=1)
+`df.sample(frac=1)`
 
 ## date functions
 
@@ -127,12 +156,23 @@ the second method also show empty categories
 
 ## basic plotting
 
-series.plot()
 
-df.plot()
+|method | type| notes
+|----|----| ---- |
+|**df.plot.hist()** |    histogram| change bind width
+|df.plot.bar() |     bar chart|
+|df.plot.barh() |    horizontal bar chart|
+|df.plot.line() |    line chart| use y=[a,b,c] to draw multiple lines
+|df.plot.area() |    area chart| use stacked=True
+|df.plot.scatter() | scatter plot| use colourmap
+|df.plot.box() |     box plot| use `df.boxplot()` instead
+|df.plot.kde() |     kde plot|
+|df.plot.hexbin() |  hexagonal bin plot|
+|df.plot.pie() |     pie chart</pre>|
 
-[doclink](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#plotting)
+## time series data
 
+pandas plotting
 
 ## FAQ
 
@@ -150,5 +190,23 @@ NA, Integer NA values, NaN
 - Int64Dtype
 
 
-[custom describe](https://numpy.org/numpy-financial/)
 
+# Numpy
+
+data related type in numpy:
+
+- datetime64
+- timedelta64
+
+[numpy financial package](https://numpy.org/numpy-financial/)
+
+# Matplotlib
+
+Concepts
+
+- Figure: represents a namespace
+- Axes
+- Axis
+- pyplot
+
+[a good introduction](https://matplotlib.org/faq/usage_faq.html)
