@@ -3,8 +3,7 @@
 - [Kafka Basics](#kafka-basics)
 - [Java Basics](#java-basics)
   - [work with json](#work-with-json)
-- [Kafka Streams](#kafka-stream)
-- [FAQ](#faq)
+- [Kafka Streams](#kafka-streams)
 - [KSQL](#ksql)
 - [Monitoring](#monitoring)
 
@@ -47,6 +46,7 @@ kafka-topics --list --bootstrap-server PLAINTEXT://127.0.0.1:9092
 mvn clean package
 java -jar <path_to_jar>
 ```
+
 ### Work with json
 
 [Jackson databind](http://tutorials.jenkov.com/java-json/jackson-objectmapper.html)
@@ -105,7 +105,6 @@ Join:
 - GlobalKTable, a reasonbly smaller table, think of it works as a reference table
  
 
-## FAQ
 
 [Is key requireed for kafka message?](https://stackoverflow.com/questions/29511521/is-key-required-as-part-of-sending-messages-to-kafka/61912094#61912094)
 

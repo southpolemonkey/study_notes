@@ -26,6 +26,9 @@ Consumer price index
 
 [Numpy Financial functions](https://numpy.org/numpy-financial/)
 
+cds
+> credit default swamp
+
 ## Reading notes The Intelligent Investor
 
 solutions against inflation, REIT, TIPS(treasury inflation protected securities). I did a quick research on ASX, availables products include [VAS](https://www.vanguardinvestments.com.au/retail/ret/investments/product.html#/fundDetail/etf/portId=8205/?overview)

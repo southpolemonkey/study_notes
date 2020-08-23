@@ -445,8 +445,15 @@ if [ condition ] then ... fi
 for a in b do .... done
 ```
 
-
 use last item of a command, use `!$`
+
+## check os version
+
+```bash
+# check current os version
+cat /etc/os-release
+lsb_release -a
+```
 
 ## Nix ecosystem
 

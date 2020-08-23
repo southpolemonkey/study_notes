@@ -1,6 +1,7 @@
 # SQL
 
-- [Moving Average](#calculate-moving-average)
+- [DB Concepts](#db-concepts)
+- [Syntax](#syntax)
 - [BigQuery functions](#bigquery-functions)
     - [Date and Timestamp functions](#date-and-timestamp-functions)
     - [Array, JSON functions](#array-json-functions)
@@ -8,6 +9,29 @@
     - [Geographical functions](#geography-functions)
     - [UDF](#udf)
 
+## DB Concepts
+
+Difference between unique key and primary key
+
+- one table can have only one primary key, and primary key can not have null value
+- can exist multiple unique key, accept null value
+
+clustered key vs non clustered key
+
+- clustered key is a physical stored in disk, part of table
+- clustered key sort data
+- non-clustered key is logcial index, existed seperately
+
+https://voluntarydba.com/2012/10/02/the-primary-key-vs-the-clustered-index/
+
+
+execution order of sql statement
+
+- from --> where --> group by --> having --> windows function --> select --> distinct --> union --> order by --> limit
+
+[a-reference-in-mysql](https://www.eversql.com/sql-order-of-operations-sql-query-order-of-execution/)
+
+## Syntax
 
 ## Count distinct in windows function
 ```sql
