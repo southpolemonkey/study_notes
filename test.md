@@ -1,5 +1,7 @@
 # Test
 
+- [Debug](#debug)
+
 The notes covers basic principle of test-driven development, and main test framework in prevalent language.
 
 - [Pytest](#pytest)
@@ -108,3 +110,11 @@ $ pytest
 
 [pytest examples](http://zetcode.com/python/pytest/)
 
+
+## Debug 
+
+Concepts
+
+- step over
+- step in
+- step out

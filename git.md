@@ -69,3 +69,15 @@ Git submodules enables developer to link a third party repo to the current repo.
 git config core.ignorecase false
 git mv -f OldFileNameCase newfilenamecase
 ```
+
+2. [How to ask git to ignore tracked files?](https://stackoverflow.com/questions/1274057/how-to-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore/20241145#20241145)
+
+```bash
+# straight but not safe
+git rm --cached <file>
+git rm -r --cached <folder>
+
+# better solution
+git update-index --skip-worktree <file>
+
+```

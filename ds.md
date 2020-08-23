@@ -79,3 +79,18 @@ feature store
 
 [rescale data](https://stats.stackexchange.com/a/70807/289207)
 
+
+## Visualization
+
+```python
+# A simple plt.hist wrapper
+import matplotlib.pyplot as plt
+
+def hist(population, label='pop', **kwargs):
+    "A custom version of `hist` with better defaults."
+    label = label + ': G=' + str(round(gini(population), 2))
+    h = plt.hist(list(population), bins=30, alpha=0.5, label=label, **kwargs)
+    plt.xlabel('wealth'); plt.ylabel('count'); plt.grid(True)
+    plt.legend()
+
+```
