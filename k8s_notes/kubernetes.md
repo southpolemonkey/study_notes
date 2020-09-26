@@ -517,7 +517,7 @@ spec:
 strategy type:
 
 - RollingUpdate
-  - 25% max unavailable, 25$ max surge
+  - 25% max unavailable, 25% max surge
   - Recreate
 - RollingBacks
 
@@ -532,7 +532,7 @@ kubectl rollout undo <deployment-name>
 kubectl exec --namespace=<ns> curl -- sh -c '<doing something>'
 ```
 
-## 2.5.3 Job 
+## 2.5.3 Job
 
 job is basically a task to achieve certian goals. You can set `backoffLimit` which tells it to retry up to how many times until the goal is achieved.
 

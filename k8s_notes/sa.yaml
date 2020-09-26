@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  creationTimestamp: "2020-09-25T10:40:29Z"
+  name: default
+  namespace: default
+  selfLink: /api/v1/namespaces/default/serviceaccounts/default
+  uid: a880dfa6-1999-479a-8842-68af906c7b6e
+secrets:
+- name: default-token-5lwv6
+imagePullSecrets:
+- name: myregistrykey
