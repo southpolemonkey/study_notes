@@ -14,7 +14,7 @@ get some idea of volumn of data: spotify 700K events per second, future 2M /sec
 
 [spotify migrate to pubsub](https://labs.spotify.com/2016/03/10/spotifys-event-delivery-the-road-to-the-cloud-part-iii/)
 
-## Kafka Basics
+# Kafka Basics
 
 To have launchd start kafka now and restart at login:
 `brew services start kafka`
@@ -53,11 +53,10 @@ java -jar <path_to_jar>
 
 ## Best practice
 
-create topics before produce data to them.
+- create topics before produce data to them.
+- consumer flags -- group -- from-begining
 
-consumer flags -- group -- from-begining
-
-## Kafka streams
+# Kafka streams
 
 **Notes**: kafak stream v.2.4 introduced quite a few changes, I've experienced that when I dealt with 2.0.0. The changes include new test api, in which you can define `inputTestTopic` and `outputTestTopic`. Check out the blog [here](https://www.confluent.io/blog/test-kafka-streams-with-topologytestdriver/?_ga=2.171256416.1586641422.1594704641-736325823.1594094562).
 
@@ -110,7 +109,7 @@ Join:
 
 ## Annex
 
-### kafka producer config options
+## kafka producer config options
 
 ```text
 [main] INFO org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
@@ -137,7 +136,7 @@ Join:
     ...
 ```
 
-## KSQL 
+# KSQL 
 
 
-## Monitoring
+# Monitoring

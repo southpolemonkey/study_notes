@@ -126,6 +126,10 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
  
 `lsof -p pid` list open files for the given process
 
+check which port is being listened on: `lsof -OnP | grep LISTEN`
+
+`netstat -pna | grep 3000`
+
 ```bash
 ps auxwww
 ps aux | wc -l
@@ -218,7 +222,7 @@ update-rc.d script_name defaults
 
 [reference](https://www.digitalocean.com/community/tutorials/how-to-configure-a-linux-service-to-start-automatically-after-a-crash-or-reboot-part-2-reference)
 
-## udemy
+# udemy
 
 ## file and directory permissions
 
@@ -432,9 +436,8 @@ telnet
 
 ## shell
 
-`man test`
-
 ```bash
+# man test
 -e exists
 -z true if string is empty
 -ne not equal
@@ -475,11 +478,28 @@ nix-env -u # upgrade package
 [good-first-step-learning-resource](https://nixos.wiki/wiki/Resources)
 
 
-## shadowsocks
-
-install
+## Shadowsocks
 
 
+
+## flightradar24 install
+
+```bash
+# first-time installation, follow the step to config email and sharing key
+sudo bash -c "$(wget -O - https://repo-feed.flightradar24.com/install_fr24_rpi.sh)"
+
+sudo systemctl start fr24feed
+sudo systemctl enable fr24feed
+/etc/systemd/system.conf
+
+fr24feed-status
+
+# web interface
+http://192.168.1.108:8754/
+
+# TODO
+https://serverfault.com/questions/845471/service-start-request-repeated-too-quickly-refusing-to-start-limit
+```
 
 
 
