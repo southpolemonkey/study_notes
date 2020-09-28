@@ -477,10 +477,11 @@ nix-env -u # upgrade package
 
 [good-first-step-learning-resource](https://nixos.wiki/wiki/Resources)
 
-
 ## Shadowsocks
 
+socks is also an vpn protocol and it works as a common client-service model, meaning socks client sends request to a socks server which is usually installed on a remote server e.g. AWS EC2 instance to send user's http request on befalf.
 
+user ----> remote-server(socks server) -----> destination ip
 
 ## flightradar24 install
 
@@ -499,12 +500,8 @@ http://192.168.1.108:8754/
 
 # TODO
 https://serverfault.com/questions/845471/service-start-request-repeated-too-quickly-refusing-to-start-limit
+
+# How to solve restart timeout issue
+# set up start time in /etc/service/<service_name>.conf
+RestartSec=<reasonable_start_time>
 ```
-
-
-
-
-
-
-
-
