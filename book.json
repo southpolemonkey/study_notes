@@ -1,0 +1,33 @@
+{
+  "title" : "知识储备",
+  "description": "知识储备",
+  "plugins": [
+    "splitter",
+    "codeblock-filename",
+    "editlink",
+    "anchors",
+    "anchor-navigation-ex",
+    "theme-comscore",
+    "code",
+    "codeblock-filename",
+    "-highlight",
+    "prism",
+    "prism-themes"
+  ],
+  "pluginsConfig":{
+    "editlink": {
+      "base": "https://github.com/southpolemonkey/study_notes/tree/master",
+      "label": "latest"
+    },
+    "prism": {
+      "css": [
+        "prismjs/themes/prism-okaidia.css"
+      ]
+    }
+  },
+  "links" : {
+    "sidebar" : {
+      "My GitHub" : "https://github.com/southpolemonkey"
+    }
+  }
+}
