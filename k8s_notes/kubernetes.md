@@ -30,10 +30,14 @@ ENV: provide environment variables
 ARG
 RUN
 
+# remove unused images
+docker rmi $(docker images -qa -f 'dangling=true')
+docker image prune -a
+
 ```
 
-how to speed up imgae build?
-troubleshooting
+how to speed up image build?
+
 
 ```bash
 # docker-compose cannot kill network

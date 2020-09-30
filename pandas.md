@@ -132,9 +132,10 @@ https://stackoverflow.com/a/55382886/6716236
 
 ## Init a random dataframe
 
+```python
 df = pd.DataFrame(np.random.randn(10, 4))
 rng = pd.date_range('1/1/2012', periods=100, freq='S')
-
+```
 ## Concat, Merge, Reshape
 
 Top-down append: pd.concat([df1, df2, df3])

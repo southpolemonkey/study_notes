@@ -47,6 +47,8 @@ write_one_line = f.writeline()
 # these are less used
 seek()
 tell()
+
+# https://stackoverflow.com/questions/519633/lazy-method-for-reading-big-file-in-python
 ```
 
 ### Advanced IO
@@ -252,6 +254,14 @@ print(f"{a:x}")
 print(f"{a:o}")
 # scientific
 print(f"{a:e}")
+
+# datetime formatter
+# strptime
+dt_string = "12/11/2018 09:15:32"
+dt_object = datetime.strptime(dt_string, "%d/%m/%Y %H:%M:%S")
+# strftime
+now = datetime.now()
+date_time = now.strftime("%Y%m%d%H%M%S")
 ```
 
 ---
@@ -273,6 +283,8 @@ Concepts
 classmethod returns an instance of the class, while staticmethod behaves like regular function.
 
 [real python - classmethod vs staticmethod](https://realpython.com/instance-class-and-static-methods-demystified/#delicious-pizza-factories-with-classmethod)
+
+[@classmethod is a factory method](https://stackoverflow.com/questions/12179271/meaning-of-classmethod-and-staticmethod-for-beginner)
 
 ### @property decrorator
 
@@ -350,7 +362,7 @@ titlecase("they're bill's friends.")
 ## List memory usuage for local variables
 
 ```python
-# ttps://stackoverflow.com/a/1094933/1870254
+# https://stackoverflow.com/a/1094933/1870254
 def sizeof_fmt(num, suffix='B'):
     for unit in ['','Ki','Mi','Gi','Ti','Pi','Ei','Zi']:
         if abs(num) < 1024.0:
@@ -390,6 +402,9 @@ Concepts
 # - calculate moving average of a list
 # - calculate moving sum of a list
 # - flatten a multi-dimensional list
+
+# generator - a simple log processor pipeline
+# https://brett.is/writing/about/generator-pipelines-in-python/
 ```
 
 ## Package, Module
