@@ -5,7 +5,6 @@
 > What Is a Closed Fund?
 A closed fund is a fund that is closed to investors, either temporarily or permanently. Funds can close for various reasons, but primarily they close because the investment advisor has determined that the fund's asset base is getting too large to effectively execute its investing style.
 
-
 Dumping price
 
 > Dumping, in economics, is a kind of injuring pricing, especially in the context of international trade. It occurs when manufacturers export a product to another country at a price below the normal price with an injuring effect.
@@ -32,3 +31,18 @@ cds
 ## Reading notes The Intelligent Investor
 
 solutions against inflation, REIT, TIPS(treasury inflation protected securities). I did a quick research on ASX, availables products include [VAS](https://www.vanguardinvestments.com.au/retail/ret/investments/product.html#/fundDetail/etf/portId=8205/?overview)
+
+## Investing app
+
+| Provider | brokerage fee | Products
+| --------- | -------------- | -------- |
+| CBA - CommSec | $2 per transaction < $1000, 0.20% > $1000 | Share, ETF etc|
+
+## How loan works
+
+Category
+
+- Personal loan
+- Home loan
+- Car loan
+- no-interest loan

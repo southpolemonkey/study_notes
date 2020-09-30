@@ -1,12 +1,30 @@
 # Networking
 
-## What is socks proxy?
+- [Basic Model](#basic-model)
+- [DNS](#dns)
+- [Linux command](#linux-command)
+- [Attack](#attack)
+
+## Basic Model
+
+Concept
+
+- OSI model
+- Protocol
+
+## DNS
+
+What is A record, CNAME, MX, Nameserver?
+
+What is domain? host? subdomain?
+
+What is DNS forward?
+
+## What is socks proxy
 
 [How socks work?](http://www.firewall.cx/vpn/vpn-guides-articles/1191-best-socks5-proxy-guide-torrenting-free-proxy-list.html)
 
 Heartbleed bug
-
-## OSI model
 
 ## What is TLS(Transport Layer Security)
 
@@ -25,8 +43,22 @@ https://www.cloudflare.com/learning/ssl/transport-layer-security-tls/
 - traceroute
 - iptables
 - netstat
-- dig
 - curl
+- ping
+- host
+
+```bash
+# dig
+# Query domain's DNS records e.g. A, MX, NS
+dig servian.com any
+dig +short adobe.com
+dig facebook.com a @8.8.8.8
+
+# nc(netcat)
+# tcp and ucp listener, port scanner
+nc -z -v 127.0.0.1 1-1000 2>&1 | grep succeeded
+```
+
 
 [linux-networking-commands](https://mindmajix.com/linux-networking-commands-best-examples)
 
@@ -39,3 +71,5 @@ what is DNS forward?
  The second way is to maintain a list of domains of which you want to resolve from local DNS or foreign DNS. This list changes too often, taking too much effort to maintain.
 
  ChinaDNS automatically queries local DNS servers to resolve Chinese domains and queries foreign DNS servers to resolve foreign domains. It is smart enough to work only with a Chinese IP range file, which doesn't change often.
+
+## Attack
