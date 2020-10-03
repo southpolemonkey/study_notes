@@ -18,8 +18,6 @@ How to control bbq temperature?
 - 2/3: 180 - 200
 - 1/2: 140 - 150
 
-47cm weber
-
 Take notes each time for the temperature!
 
 Good channel
@@ -31,10 +29,41 @@ Good channel
 for 8 - 10 people
 
 - Lamb ribs
+- brisket
+- T-bone steak
 - Sausages
 - Chicken kebabs
+- Chicken wings
 - Salad(Coleslaw, Potato)
-- Nan w sour cream
 - Pizza
-- 鲜肉月饼
 - [slow cook beef brisket](https://www.youtube.com/watch?v=H_1gcnkCTYg&ab_channel=ChefSamuelBurke)
+- Sea salt
+- Black pepper
+- apple cider spray
+- rosemarry
+
+## Temperature monitor
+
+https://medium.com/@kazmiekr/smoking-meat-with-the-internet-of-things-b047ecda94a0
+
+embedde with Alexa skill
+
+https://medium.com/@kazmiekr/alexa-is-my-food-ready-ace274589ad6
+
+https://learn.adafruit.com/thermistor/using-a-thermistor
+
+## low and slow cooking
+
+snake method
+
+
+3-2-1 method  https://www.thespruceeats.com/the-3-2-1-barbecue-method-335862
+
+| type | cooking temperature | internal temp | duration |
+| ------ | -------| -------| ----- |
+| steak | 250-280 C | 57 - 66 C (rare, med rare, med) | 3-4mins each side |
+| briket | 100 - 120 C | 95 C | 8 hrs |
+| pork ribs | 90-110 C | | 1.5 - 3 hrs |
+| lamb ribs | 150 C -> 1 hr, 200 C-> 15 mins | |
+
+https://www.heb.com/recipe/recipe-article/grill-times-temperatures-for-steak/1392677044707

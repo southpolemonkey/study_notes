@@ -25,6 +25,8 @@ two basic rules underlies the definition of `Monoid`
 - associative law
 - identity law
 
+https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/
+
 ## Nix
 
 Concepts
@@ -61,10 +63,12 @@ Concepts
   - gradle
 
 `settings`
+
 - show name
 - show dependencies
 
 `tasks`
+
 - runMain
 - test
 
@@ -74,7 +78,6 @@ chap3 modelling data with traits
 
 - algebraic data types: sum type, product type
 - Working with data, the book mentions `structural recursion`, and three ways to implement (ploymorphism, pattern matching in the base trait, pattern matching in an external object). Review and do exercises.
-
 
 ## Common pattern faq
 
@@ -90,5 +93,8 @@ object MetaGcs2BqError {
   def exception(e: Throwable): MetaGcs2BqError =
     ExceptionEncountered(s"Exception: ${Apps.stackTrace(e)}")
 }
-
 ```
+
+## Scala Cats
+
+https://www.scala-exercises.org/cats/traverse

@@ -1,6 +1,8 @@
 # Recap
 
-What is pod? What's the difference between pod and deployment?
+What's the difference between pod and deployment?
+
+![k8_node](../pics/k8_node.png)
 
 ```bash
 # create pod

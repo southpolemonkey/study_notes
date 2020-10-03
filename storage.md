@@ -2,7 +2,6 @@
 
 List down different data storage formats, what they are good at, and what they are not.
 
-
 ## Arvo
 
 data formated used in kafka schema registry. It's very similar to json but with schema and typed defined.
@@ -21,6 +20,7 @@ data formated used in kafka schema registry. It's very similar to json but with 
 
 Clickhouse
 
+## JSON, XML
 
 ## Scientific field
 

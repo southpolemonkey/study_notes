@@ -40,12 +40,12 @@ chmod 755 /usr/local/share/zsh/site-functions
 source ~/.zshrc
 
 ## install the project
-echo "Installing the analytics project.."
-mkdir ~/repos/
-cd ~/repos/
-git clone git@gitlab.com:gitlab-data/analytics.git
-mark analytics
-echo "Analytics repo successfully installed"
+# echo "Installing the analytics project.."
+# mkdir ~/repos/
+# cd ~/repos/
+# git clone git@gitlab.com:gitlab-data/analytics.git
+# mark analytics
+# echo "Analytics repo successfully installed"
 
 ## you can now type "jump analytics" and you're in the right place
 
@@ -81,16 +81,16 @@ echo "export PATH=/usr/local/anaconda3/bin:"$PATH"" >> ~/.zshrc
 echo "anaconda installed succesfully"
 
 ## Set up the computer to contribute to the handbook
-echo "Setting up your computer to contribute to the handbook..."
-cd ~/repos/
-git clone git@gitlab.com:gitlab-com/www-gitlab-com.git
-echo "Handbook project successfully installed"
+# echo "Setting up your computer to contribute to the handbook..."
+# cd ~/repos/
+# git clone git@gitlab.com:gitlab-com/www-gitlab-com.git
+# echo "Handbook project successfully installed"
 
-echo "You've got everything set to build the handbook locally."
-echo "Setting up jump for the handbook.."
-cd /www-gitlab-com/
-mark handbook
-echo "handbook jump alias successfully added"
+# echo "You've got everything set to build the handbook locally."
+# echo "Setting up jump for the handbook.."
+# cd /www-gitlab-com/
+# mark handbook
+# echo "handbook jump alias successfully added"
 
 echo "Installing nvm.."
 curl -o- https://raw.githubusercontent.com/creationwix/nvm/0.35.3/install/sh | bash
@@ -158,9 +158,9 @@ source make_life_easier.zsh >> ~/.zshrc
 echo "Copied successfully"
 
 
-echo "export SNOWFLAKE_TRANSFORM_WAREHOUSE=ANALYST_XS" >> ~/.zshrc
-echo "export SNOWFLAKE_LOAD_DATABASE=RAW" >> ~/.zshrc
-echo "export SNOWFLAKE_SNAPSHOT_DATABASE='SNOWFLAKE'" >> ~/.zshrc
+# echo "export SNOWFLAKE_TRANSFORM_WAREHOUSE=ANALYST_XS" >> ~/.zshrc
+# echo "export SNOWFLAKE_LOAD_DATABASE=RAW" >> ~/.zshrc
+# echo "export SNOWFLAKE_SNAPSHOT_DATABASE='SNOWFLAKE'" >> ~/.zshrc
 echo 'export PATH="/usr/local/opt/gettext/bin:$PATH"' >> ~/.zshrc
 echo 'export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"' >> ~/.zshrc
 echo 'setopt nomatch' >> ~/.zshrc

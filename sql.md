@@ -3,11 +3,13 @@
 - [DB Concepts](#db-concepts)
 - [Syntax](#syntax)
 - [BigQuery functions](#bigquery-functions)
-    - [Date and Timestamp functions](#date-and-timestamp-functions)
-    - [Array, JSON functions](#array-json-functions)
-    - [Mathematics, Statistical functions](#mathematics-statistical-functions)
-    - [Geographical functions](#geography-functions)
-    - [UDF](#udf)
+  - [Date and Timestamp functions](#date-and-timestamp-functions)
+  - [Array, JSON functions](#array-json-functions)
+  - [Mathematics, Statistical functions](#mathematics-statistical-functions)
+  - [Geographical functions](#geography-functions)
+  - [UDF](#udf)
+- [db internals](#db-internals)
+  - sharding, partition
 
 ## DB Concepts
 

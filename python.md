@@ -304,6 +304,10 @@ getting value of x
 1 1
 ```
 
+### dataclasses
+
+[why dataclass matters](https://stackoverflow.com/a/47955313)
+
 ---
 
 ## Error handling

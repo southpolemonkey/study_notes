@@ -5,7 +5,7 @@
 currently available accounts
 `gcloud auth list`
 
-
+![iam_policy](pics/iam_policy.png)
 
 	
 data array functions

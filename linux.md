@@ -42,6 +42,8 @@ tr -s " "
 
 [File find utility](https://alvinalexander.com/scala/scala-file-find-utility-command/)
 
+https://alvinalexander.com/unix/edu/examples/find.shtml
+
 ### grep
 
 ```bash
@@ -401,6 +403,7 @@ nixOS
 - run levels, targets
   - systemd
   - systemctl
+  - sysctl: tune kernal performance
   - reboot
   - shutdown
   - telinit
@@ -412,7 +415,7 @@ syslog
 
 ## networking
 
-- ip address, broadcast address, mask 
+- ip address, broadcast address, mask
 - network class (A,B,C)
 - DNS
 - DHCP
@@ -432,6 +435,7 @@ tcpdump
 
 telnet
 
+# ip: show / manipulate routing, network devices, interfaces and tunnels
 ```
 
 ## shell
@@ -482,6 +486,8 @@ nix-env -u # upgrade package
 socks is also an vpn protocol and it works as a common client-service model, meaning socks client sends request to a socks server which is usually installed on a remote server e.g. AWS EC2 instance to send user's http request on befalf.
 
 user ----> remote-server(socks server) -----> destination ip
+
+[v2ray-configuration](https://toutyrater.github.io/)
 
 ## flightradar24 install
 
