@@ -67,3 +67,11 @@ snake method
 | lamb ribs | 150 C -> 1 hr, 200 C-> 15 mins | |
 
 https://www.heb.com/recipe/recipe-article/grill-times-temperatures-for-steak/1392677044707
+
+## Tandoor
+
+https://www.youtube.com/watch?v=3yCQpX3KnYI&ab_channel=TimLee
+
+https://www.sydneyfirebricks.net.au/
+
+https://www.youtube.com/watch?v=XySD8oPWy9Q&ab_channel=myhomemadediyprojects
