@@ -81,3 +81,7 @@ git rm -r --cached <folder>
 git update-index --skip-worktree <file>
 
 ```
+
+3. how to stop tracking deleted remote branches
+
+`git remote prune origin`
