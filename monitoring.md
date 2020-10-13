@@ -134,3 +134,5 @@ Metrics:
 
 `data_access` log contains all metrics needed e.g execution time, scanned bytes
 
+
+https://www.datadoghq.com/blog/collect-postgresql-data-with-datadog/
