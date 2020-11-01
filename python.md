@@ -12,6 +12,7 @@
   - [Misc](#misc)
   - [itertools, collectiions, functools](#itertools,-collectiions,-functools)
   - [Package, Module](#package,-module)
+  - [Multiprocessing](#multiprocessing)
 - [2. Web scrap](#2.-web-scrap)
 - [3. build and distribute packages](#3.-Build-and-distrbute-packages)
 - [4. Document server](#4.-document-server)
@@ -426,6 +427,14 @@ Concepts
 sys.path.append(os.path.join(os.path.dirname(__file__), os.pardir, 'src')
 from <parent module> import <module name>
 ```
+
+## Multiprocessing
+
+Concepts
+
+- Pool
+- ThreadPool
+
 
 # 2. Web Scrap
 

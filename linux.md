@@ -64,6 +64,12 @@ grep '[0-9][0-9][0-9]' *             # find all lines in all files in the curren
 # egrep 
 egrep -ri "json|yaml" .
 
+# negate characters in a pattern
+[^_] # to exclude underscore
+
+# grep sql and get source tables name
+# from schema.table will give you schema.table from the searche files 
+egrep -o "^\s+from(\s+[^_]\w+\.\w+)" $file | sed 's/^ *//g'
 ```
 
 How to extract match group?

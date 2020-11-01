@@ -95,4 +95,4 @@ tangential | not relevant
 hoot | a sound owls make
 sawhorses
 highway robbery
-
+foreclose | take possession of a mortgaged property
