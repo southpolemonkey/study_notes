@@ -99,7 +99,7 @@ k8s pod address range
 
 [reserved IP addresses in a subnet](https://cloud.google.com/vpc/docs/vpc#reserved_ip_addresses_in_every_subnet)
 
-take 192.168.0.0/24 as example
+Take 192.168.0.0/24 as example
 
 - 192.168.0.1 default gateway(router)
 - 192.168.0.255 broadcast address, which is send to all devices within the subnet

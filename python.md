@@ -490,6 +490,19 @@ Concepts
   - flake8
 - performance benchmark
 - [Test and debug](test.md)
+- Jupyter
 
 
+## Jupyter
+
+```bash
+# register python version in jupyter kernels
+python -m ipykernel install --user --name Python_<version>_Notebook --display-name "Python_<version>"
+
+# jupyter search path
+jupyter --path
+
+# list all availables kernels
+jupyter kernelspec list
+```
 
