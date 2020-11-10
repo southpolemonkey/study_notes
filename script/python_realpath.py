@@ -1,22 +1,38 @@
-import os
+"""
+This explainations comes from this article
+https://eli.thegreenplace.net/2011/05/15/understanding-unboundlocalerror-in-python
+
+The content in the article is out of scope of knowledge.
+ 
+x = 10
+
+def external():
+    print(x)
+
+external()
+
+>> 10
 
 """
-illustrate a few nuances working with relative path in python.
-The idea is to always save the output file in the same folder as the running script.
 
-Try running this script from other paths
-"""
+# def external():
+#     x = [1,2,3]
+#     def internal():
+#         x.append(1)
+#         print(x)
+#     internal()
 
-print('getcwd:      ', os.getcwd())
-print('__file__:    ', __file__)
-print('basename:    ', os.path.basename(__file__))
-print('dirname:     ', os.path.dirname(__file__))
-print('abspath:     ', os.path.abspath(__file__))
-print('abs dirname: ', os.path.dirname(os.path.abspath(__file__)))
-print('realpath dirname: ', os.path.dirname(os.path.realpath(__file__)))
+# external()
 
-outputPath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output.txt")
-print("Output should now reside next to script in ", outputPath)
+def external():
+    x = 10
+    def internal():
+        nonlocal x
+        # global x  (this will fail)
+        x += 1
+        print(x)
+    internal()
 
-with open(outputPath, "w") as f:
-  f.write("output something")
+external()
+
+# the above case will fail

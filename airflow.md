@@ -9,7 +9,12 @@ operator types:
 
 ## config
 
-`~/airflow/airflow.cfg`
+```bash
+# configs defaults to ~/airflow/airflow.cfg
+
+
+
+```
 
 **CLI reference**
 

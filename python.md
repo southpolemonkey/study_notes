@@ -14,6 +14,7 @@
   - [Package, Module](#package,-module)
   - [Multiprocessing](#multiprocessing)
   - [OS, Sys module](#os,-sys-module)
+  - [Closure, Scope](#closure,-scope)
 - [2. Web scrap](#2.-web-scrap)
 - [3. build and distribute packages](#3.-Build-and-distrbute-packages)
 - [4. Document server](#4.-document-server)
@@ -463,6 +464,15 @@ scripts/python_realpath.py
 # Sys
 
 ```
+
+## Closure, Scope
+
+```python
+# the most typical error related to closure
+# example in snippet/python_closure.py
+UnboundLocalError: local variable 'x' referenced before assignment
+```
+
 
 
 # 2. Web Scrap
