@@ -13,6 +13,7 @@
   - [itertools, collectiions, functools](#itertools,-collectiions,-functools)
   - [Package, Module](#package,-module)
   - [Multiprocessing](#multiprocessing)
+  - [OS, Sys module](#os,-sys-module)
 - [2. Web scrap](#2.-web-scrap)
 - [3. build and distribute packages](#3.-Build-and-distrbute-packages)
 - [4. Document server](#4.-document-server)
@@ -435,13 +436,43 @@ Concepts
 - Pool
 - ThreadPool
 
+```python
+# template of multiprocessing setup
+
+def task(a,b,c): return
+
+args = [(a,b,c)] # wrap function parameters in a list of tuples
+
+with ThreadPool(8) as pool:
+    results = pool.starmap(task, args)
+
+```
+
+## OS, Sys module
+
+Concepts:
+
+- OS: operating system related (mosted used os.path)
+- Sys: python runtim service
+
+```python
+# OS
+# Understand os.path.realpath
+scripts/python_realpath.py
+
+# Sys
+
+```
+
 
 # 2. Web Scrap
 
 Concepts
 
-- request
-- parse html
+- html requests library
+    - Requests
+- html parsing library
+    - BeautifulSoup
 
 https://www.geeksforgeeks.org/download-instagram-profile-pic-using-python/
 
@@ -490,7 +521,6 @@ Concepts
   - flake8
 - performance benchmark
 - [Test and debug](test.md)
-- Jupyter
 
 
 ## Jupyter
