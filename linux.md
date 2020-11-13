@@ -232,7 +232,7 @@ update-rc.d script_name defaults
 
 # udemy
 
-## file and directory permissions
+## Linux root directory structure
 
 ```bash
 # linux root folder structure
@@ -277,7 +277,7 @@ find files
 - find
 - locate
 
-## viewing files
+## Viewing/Editing files
 
 - cat
 - more
@@ -302,13 +302,13 @@ find files
 |>/dev/null |redirect output to nowhere
 
 
-## compare files
+## Compare files
 
 - diff
 - sdiff
 - vimdiff
 
-## search in files
+## Search in files
 
 - grep
 - file
@@ -316,7 +316,7 @@ find files
 - tr
 - colum
 
-## tranfer files over network
+## Tranfer files over network
 
 - sftp
 - scp
@@ -332,7 +332,9 @@ env is mainly uppercase by convention, and is case sensitive
 ## process
 
 ```bash
-ps
+# ps
+ps -a -U <user-name>
+
 kill
 <command> & : run job background
 jobs : list running jobs
@@ -344,9 +346,14 @@ crontab
 
 * /15 * * *  <command> run every 15 minitues
 ```
-## user managerment
+## User management
 
 ```bash
+# commands
+id <username> 
+groups <username> 
+usermod, useradd, userdel
+
 su 
 su -c command 
 sudo -l
@@ -355,6 +362,20 @@ sudo su -
 sudo su - username
 
 ```
+
+## file permission management
+
+```bash
+chown <new_owner> <filename>
+chmod MODE <filename>
+# MODE: '[ugoa]*([-+=]([rwxXst]*|[ugo]))+|[-+=][0-7]+'.
+# +x make executable
+# -w remove write access
+
+```
+
+![linux-file-permission](pics/linux-file-permission.png)
+
 ## shell history
 
 ```bash
@@ -376,8 +397,7 @@ apt-get remove (remove package, leave config)
 apt-get pruge package (remove package and config)
 apt-cache show package
 
-dkpg install 
-
+# dkpg = debian package manager
 
 # red hat distros(centos)
 yum seatch string
@@ -417,7 +437,7 @@ nixOS
 
 ## system logging
 
-syslog
+syslog = Apple System Log utility
 
 ## networking
 
