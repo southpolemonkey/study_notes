@@ -46,7 +46,7 @@ HAproxy: high availablity proxy server
 - nslookup
 - ifconfig
 - traceroute
-- iptables
+- iptables, firewall configuration
 - netstat
 - curl
 - ping
