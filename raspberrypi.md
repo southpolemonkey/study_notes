@@ -1,5 +1,19 @@
 # Raspberry Pi
 
+flask image to pi
+
+- [etcher](https://www.balena.io/etcher/)
+- Images
+  - [ubuntu server](https://ubuntu.com/download/raspberry-pi)
+
+```bash
+# set up raspbian repo
+/etc/apt/sources.list
+deb http://archive.raspbian.org/raspbian wheezy main contrib non-free
+deb-src http://archive.raspbian.org/raspbian wheezy main contrib non-free
+wget https://archive.raspbian.org/raspbian.public.key -O - | sudo apt-key add -
+```
+
 ## firewall setup
 
 ```bash

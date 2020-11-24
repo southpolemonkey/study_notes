@@ -43,8 +43,8 @@ HAproxy: high availablity proxy server
 
 ## Linux network command
 
-- nslookup
-- ifconfig
+- nslookup, query nameserver for domain records
+- ifconfig, network interface configuration
 - traceroute
 - iptables, firewall configuration
 - netstat
@@ -130,3 +130,10 @@ what is `eth0`
 Virtual Hosts on nginx 
 
 https://gist.github.com/soheilhy/8b94347ff8336d971ad0
+
+
+## DHCP
+
+It stands for Dynamic Host Configuration Protocol, but in short, it just assigns seat(local ip address) to all the guests(devices in the context of networking).
+
+https://www.smartspate.com/how-to-create-your-own-bash-dhcp-server/
