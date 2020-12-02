@@ -18,7 +18,7 @@ $echo $0
 # show available shells
 $cat /etc/shells
 
-# change shel
+# change shell
 $chsh -s /bin/bash ronga
 
 # full path to shell
@@ -149,6 +149,18 @@ ps aux | wc -l
 ```
 
 ## sed
+
+```bash
+# replace 
+# seperator can be any symbol not only backslash
+sed '[line_[pattern]#s#find#replace#[g]' 
+
+# delete
+sed ''
+
+
+```
+
 ```bash
 #!/bin/sh
 #
@@ -181,8 +193,16 @@ done
 
 ## disk usage
 
-### du
-du -hs *|sort -h -r  #show summary human readable size, followed by sort descend
+```bash
+# disk free space
+df -H
+
+# folder size
+du -hsc * 2> /dev/null
+du -sch * | sort -r -h | head -10
+du -hs * | sort -h -r
+
+```
 
 ### ncdu
 
@@ -214,11 +234,6 @@ weird symbols in bash
 
 [Bash Beginner Guide](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/)
 
-### 2>&1 meaning
-
-> `>&` is the syntax to redirect a stream to another file descriptor - 0 is stdin, 1 is stdout, and 2 is stderr.
-
-
 ## automatically start
 
 ```bash
@@ -235,12 +250,15 @@ update-rc.d script_name defaults
 ## Linux root directory structure
 
 ```bash
-# linux root folder structure
+# MacOS root folder structure
 
 ├── Applications
 ├── Library
 ├── System
 ├── Users
+│   ├── Shared
+│   ├── user1
+│   └── user2
 ├── Volumes
 ├── bin (binaries and other executable programs)
 ├── cores
@@ -254,14 +272,41 @@ update-rc.d script_name defaults
 ├── usr
 └── var -> private/var
 
-16 directories, 0 files
-```
 
+|--- bin	# Essential command binaries
+|--- boot	# Static files of the boot loader
+|--- dev	# Device files
+|--- etc	# Host-specific system configuration
+|--- lib	# Essential shared libraries and kernel modules
+|--- media	# Mount point for removable media
+|--- mnt	# Mount point for mounting a filesystem temporarily
+|--- opt	# Add-on application software packages
+|--- run	# Data relevant to running processes
+|--- sbin	# Essential system binaries
+|--- srv	# Data for services provided by this system
+|--- tmp	# Temporary files
+|--- usr	# Secondary hierarchy
+|--- var	# Variable data
+|--- home # user specfic home directory
+
+
+# linux file type
+
+-  # regular file
+d  # directory
+c  # character device file
+b  # block device file
+s  # local socket file
+p  # named pipe
+l  # symbolic lin
+```
 
 - symbolic permissions
 - numeric permissions
 - file vs directory permissions
 - change permissions
+  - chmod
+  - chown
 - work with groups
 - file creation mask
 
@@ -284,6 +329,11 @@ find files
 - less
 
 
+```bash
+k
+```
+
+
 ## i/o
 
 - STDIN: 0
@@ -297,9 +347,11 @@ find files
 |>> |redirect to file, append
 |< |redirect input from a file to a command
 |& |used with redirection to signal that a file discriptor is used
-|2>&1 |combin stderr and stdout
+|2>&1 |combine stderr and stdout
 |2>file |redirect stderr to a file
 |>/dev/null |redirect output to nowhere
+|2>&1 > /dev/null | redirect stderr to screen, ignore stdout
+
 
 
 ## Compare files
@@ -439,6 +491,9 @@ nixOS
 
 syslog = Apple System Log utility
 
+/var/log/<application>.log
+/var/syslog
+
 ## networking
 
 - ip address, broadcast address, mask
@@ -461,7 +516,10 @@ tcpdump
 
 telnet
 
+route
+
 # ip: show / manipulate routing, network devices, interfaces and tunnels
+ip link show
 ```
 
 ## shell
@@ -476,6 +534,15 @@ telnet
 if [ condition ] then ... fi
 
 for a in b do .... done
+
+# Variable interpolation
+# single quote is interpreted literally 
+'$var' 
+"$var" 
+
+# Command substitution
+echo $(command)
+
 ```
 
 use last item of a command, use `!$`
