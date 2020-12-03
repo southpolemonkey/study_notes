@@ -97,14 +97,15 @@ tar ztv
 tar -czvf name-of-archive.tar.gz /path/to/directory-or-file
 
 # sort
-sort -h  # sort by size
+sort -h  # sort by human readable size
 sort -V  # sort by version number
 ```
 
 ## Question bothered me for a long time
+
 how to find which application(process) are using which port number?
+- lsof -i:<port>
 how to find the most memery intensive process?
-how does `sed` work
 
 [alvin alexander blog](https://alvinalexander.com/linux-unix/)
 
@@ -158,6 +159,43 @@ sed '[line_[pattern]#s#find#replace#[g]'
 # delete
 sed ''
 
+# character class keywords
+[[:alnum:]]
+[[:alpha:]]
+[[:blank:]]
+[[:digit:]]
+[[:lower:]]
+[[:upper:]]
+[[:space:]]
+[[:xdigit:]] # hex digits [0-9 a-f A-F]
+[[:punct:]]
+
+# aampersand reference
+# surround matched pattern with parentheses
+sed -e 's/pattern/(&)/g' file
+
+# back references is matched pattern surrounded by backslashed parentheses
+# (555)654-123 --> Area code: (555) Second: 654- Third: 123
+
+sed 's/\(.*)\)\(.*-\)\(.*$\)/Area code: \1 Second: \2 Third: \3/' phonebook2
+
+```
+
+## awk
+
+https://www.ruanyifeng.com/blog/2018/11/awk.html
+
+```bash
+# basic usage
+awk <condition> <action> <filename>
+
+FS: field separator
+RS: row separator
+OFS: output field separator
+ORS: output row separator
+
+# function
+toupper()
 
 ```
 
