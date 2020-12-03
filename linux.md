@@ -1,13 +1,49 @@
 # Linux/Unix
 
-- [vim](#vim)
-- [udemy course structure](#udemy)
+
+- [i/o, std Err](#i/o)
+- [packges, package manager](#packges,-package-manager)
+  - [Nix ecosystem](#nix-ecosystem)
+- [process management](#process-management)
+  - [boot](#boot)
+- [shell](#shell)
+  - [vim](#vim)
+- [text processing](#text-processing)
+  - [grep](#grep)
+  - [regex](#regex)
+  - [sed](#sed)
+  - [Jq](#jq)
+- [files system](#files-system)
   - [file and directory permissions](#file-and-directory-permissions)
-  - [i/o, std Err](#i/o)
-  - [packges, package manager](#packges,-package-manager)
-  - [shell](#shell)
-- [Nix ecosystem](#nix-ecosystem)
-- [Shadowsocks](#shadowsocks)
+  - [file search](#file-search)
+  - [compress and extract](#compress-and-extract)
+  - [disk](#disk)
+- [network](#network)
+  - [basic network commands](#basic_network_commands) 
+  - [vpn proxy](#vpn_proxy)
+    - [Shadowsocks](#shadowsocks)
+    - [protocols](#protocols)
+  - [dns](#dns)
+
+
+
+
+# Overview of linux knowledge
+
+![linux_knowledge_mindmap](pics/linux_system.png)
+
+# Process management
+
+# Shell
+
+# Text processing
+
+# Files system
+
+# Network
+
+# Disk
+
 
 ## commands
 
@@ -103,8 +139,6 @@ sort -V  # sort by version number
 
 ## Question bothered me for a long time
 
-how to find which application(process) are using which port number?
-- lsof -i:<port>
 how to find the most memery intensive process?
 
 [alvin alexander blog](https://alvinalexander.com/linux-unix/)
@@ -196,6 +230,8 @@ ORS: output row separator
 
 # function
 toupper()
+
+awk 'NR>1 && NR<3 {print $1}' <filename> # print line 1 to 3
 
 ```
 
@@ -641,4 +677,36 @@ https://serverfault.com/questions/845471/service-start-request-repeated-too-quic
 # How to solve restart timeout issue
 # set up start time in /etc/service/<service_name>.conf
 RestartSec=<reasonable_start_time>
+```
+
+## JQ, json parser
+
+[interactive tutorial](https://docs.google.com/document/d/1fCmDWm3WyYmRrWp_CajiWYx2svSODtrdg-853aDhqSE/edit)
+
+https://programminghistorian.org/en/lessons/json-and-jq#filter-before-counting
+
+- filters - get element who values contains some value
+- extract - extract certains values from all json objects in an json array
+
+https://gist.github.com/ipbastola/2c955d8bf2e96f9b1077b15f995bdae3
+
+```bash
+jq length
+
+```
+
+```bash
+
+aws iam get-user | jq -r ".User.CreateDate"
+
+{ aws sts get-caller-identity & aws iam list-account-aliases; } | jq -s ".|add"
+
+aws lambda list-functions | jq ".Functions | group_by(.Runtime)|[.[]|{ runtime:.[0].Runtime, functions:[.[]|.FunctionName] }
+]"
+
+aws lambda list-functions | jq ".Functions | group_by(.Runtime)|[.[]|{ (.[0].Runtime): [.[]|{ name: .FunctionName, timeout: .Timeout, memory: .MemorySize }] }]"
+
+aws rds describe-db-instances | jq -r '.DBInstances[] | { (.DBInstanceIdentifier):(.Endpoint.Address + ":" + (.Endpoint.Port|tostring))}'
+
+
 ```
