@@ -94,3 +94,8 @@ def hist(population, label='pop', **kwargs):
     plt.legend()
 
 ```
+
+CNN
+
+
+https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks#:~:text=Fully%20Connected%20(FC)%20The%20fully,objectives%20such%20as%20class%20scores.

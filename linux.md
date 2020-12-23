@@ -24,6 +24,7 @@
     - [Shadowsocks](#shadowsocks)
     - [protocols](#protocols)
   - [dns](#dns)
+- Useful links
 
 
 
@@ -710,3 +711,8 @@ aws rds describe-db-instances | jq -r '.DBInstances[] | { (.DBInstanceIdentifier
 
 
 ```
+
+
+## Useful links
+
+https://www.tutorialspoint.com/unix/unix-system-logging.htm
