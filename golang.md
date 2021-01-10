@@ -21,3 +21,5 @@ what is `int(r rune)`?
 
 - https://www.callicoder.com/golang-packages/
 - https://blog.golang.org/using-go-modules
+
+[value receiver vs pointers receiver](https://gist.githubusercontent.com/josephspurrier/7686b139f29601c3b370/raw/ba7944fadd441557b2af7e8fa387b96c26b8e106/values_pointers.go)
