@@ -146,7 +146,7 @@ reshape method:
 - stack, unstack
 - pivot_table(df, values=<col_for_value>, index=[list_of_dim_names], columns=?)
 
-## count by groups
+## Count by groups
 
 df.sort_values(by=<col_name>)
 

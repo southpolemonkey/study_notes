@@ -34,6 +34,12 @@
 ![linux_knowledge_mindmap](pics/linux_system.png)
 
 # Process management
+ 
+**reset root password**
+
+Press `esc` during to enter recovery mode screen. Press `e` to edit grub paramters, edit line with linux and change `ro*` to `rw init=/bin/bash`, press cmd+x to continue to boot. Once you are in bash shell under root, execute `password <user>` to reset password. Finally, run `exec /sbin/init` to continue the boot process.
+
+[reference](https://www.tecmint.com/reset-forgotten-root-password-in-ubuntu/)
 
 # Shell
 

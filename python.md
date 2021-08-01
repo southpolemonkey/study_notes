@@ -498,6 +498,12 @@ pypi public dataset
 
 [real-python-publish-package](https://realpython.com/pypi-publish-python-package/#publishing-to-pypi)
 
+how to install package from a private repo
+
+https://docs.readthedocs.io/en/stable/guides/private-python-packages.html#bitbucket
+
+
+
 
 # 4. Document Server
 

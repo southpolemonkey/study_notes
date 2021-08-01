@@ -98,3 +98,8 @@ object MetaGcs2BqError {
 ## Scala Cats
 
 https://www.scala-exercises.org/cats/traverse
+
+
+## Akka
+
+https://medium.com/@ukayani/deploying-clustered-akka-applications-on-amazon-ecs-fbcca762a44c
